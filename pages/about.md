@@ -20,20 +20,15 @@ The goal of this Podcast is to help identify these systems of domination that ha
 
 ## Sponsors
 
-*   [Henry Luce Foundation](https://www.hluce.org/)
+* [Henry Luce Foundation](https://www.hluce.org/)
 
-*   [Syracuse University Engaged Humanities](https://thecollege.syr.edu/engaged-humanities/)
-
-*   [Syracuse University Department of Religion](https://thecollege.syr.edu/religion/)
-
-*   [Indigenous Values Initiative](https://indigenousvalues.org/)
-
-*   [American Indian Law Alliance](http://aila.ngo/)
+* [Syracuse University Engaged Humanities](https://thecollege.syr.edu/engaged-humanities/)
+* [Syracuse University Department of Religion](https://thecollege.syr.edu/religion/)
+* [Indigenous Values Initiative](https://indigenousvalues.org/)
+* [American Indian Law Alliance](http://aila.ngo/)
 
 ## Credits
 
-*   Onondaga Social Dance songs performed by Orris Edwards and Regis Cook
-
-*   Hosts: [Philip P. Arnold and Sandy Bigtree](https://indigenousvalues.org/about/our-team/)
-
-*   Producers: [Jordan Loewen-Colón](https://www.jordanbradyloewen.com/) and [Adam DJ Brett](https://adamdjbrett.com/)
+* Onondaga Social Dance songs performed by Orris Edwards and Regis Cook
+* Hosts: [Philip P. Arnold and Sandy Bigtree](https://indigenousvalues.org/about/our-team/)
+* Producers: [Jordan Loewen-Colón](https://www.jordanbradyloewen.com/) and [Adam DJ Brett](https://adamdjbrett.com/)
