@@ -1,0 +1,28 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Adam DJ Brett –– Web Developer –– @__adjb
+    Indigenous Values Initiative –– Fiscal Sponsor –– @indivenousVI
+    American Indian Law Alliance –– Support and inspiration –– @AILANYC
+    Betty Lyons -- AILA –– @AILANYC
+    Philip P. Arnold –– Indigenous Values Initiative –– @indivenousVI
+    Sandra Bigree –– Indigenous Values Initiative –– @indivenousVI
+
+# Developers
+    Vidhya Venkatesan (code fixes for NEXT.JS version)
+    vosaul (code fixes for NEXT.JS version)
+    leno4ka94 (code fixes for NEXT.JS version)
+    Creativitas (Jekyll version developer)
+
+# THANKS
+    Stackbit (theme)
+    American Indian Law Alliance
+    Indigenous Values Initiative
+
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, Font Awesome, Formspree, Jekyll, Markdown
+    Netlify, jQuery, Modernizr, Normalize.css
