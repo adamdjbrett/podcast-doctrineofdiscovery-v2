@@ -1,0 +1,68 @@
+title: Posdcast Site
+description: Posdcast Site
+cover: /assets/img/mapping-doctrine-of-discovery-favicon.webp
+logo: /assets/img/dod-podcast-logo.svg
+url: https://podcastweb-v2.netlify.app
+
+header:
+  background: /assets/img/hero-background.webp
+  cover: /assets/img/mapping-doctrine-of-discovery-favicon.webp
+  title: Welcome to Mapping the Doctrine of Discovery Podcast
+  description: Presented by the Indigenous Values Initiative, American Indian Law Alliance.
+  content: Helping listeners contextualize the Doctrine of Discovery.
+  btn: Subscribe to Podcast
+  btnurl: /subscribe
+
+subscribe:
+  title: Subscribe
+  btn: Subscribe →
+  link: /subscribe
+
+podcast :
+  title: Latest Episodes
+  btn: Explore All
+  url: /episodes
+  background: /assets/img/pattern.svg
+
+patner:
+  text: This project was supported by grants from the Syracuse University Engaged Humanities Network and the Henry Luce Foundation.
+  title: Patners
+  
+footer:
+  logo: /assets/img/blue-olive.svg
+  copyright1: This podcast is licensed under the Creative Commons by the Indigenous Values Initiative and American Indian Law Alliance.
+  copyright2: This site was created with Stackbit and is maintained by Adam DJ Brett.
+
+social: 
+  facebook: https://facebook.com/username
+  twitter: https://twitter.com/username
+  instagram: https://instagram.com/username
+  youtube: https://youtube.com/c/username
+
+
+defaults:
+  - scope:
+      path:            pages/**/*.md
+    values:
+      sitemap:         false
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /episodes/:title:output_ext  
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-paginate-multiple
+
+paginate: 6
+paginate_path: "/episodes/page:num/"

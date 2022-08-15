@@ -1,0 +1,14 @@
+- menu: Episodes
+  url: /episodes
+
+- menu: About
+  url: /about
+
+- menu: Land
+  url: /land
+
+- menu: Contact
+  url: /contact
+
+- menu: Learn More
+  url: https://doctrineofdiscovery.org/

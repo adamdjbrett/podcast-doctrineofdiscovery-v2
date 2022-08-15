@@ -1,0 +1,15 @@
+<div class="container mt-5 mb-5">
+<div class="row text-white text-center mb-5">
+
+<div class="col-md-12 p-3 p-md-5">
+<p>{{site.patner.text}}</p>
+<h2><strong>{{site.patner.title}}</strong></h2>
+</div>
+{% for sponsor in site.data.sponsor %}
+<div class="col-md-3 p-3 ">
+<img class="img-fluid" alt="{{ sponsor.alt }}" width="200" height="200" src="{{ sponsor.image }}"/>
+</div>
+{% endfor %}
+</div>
+<div class="col-md-12 p-3"></div>
+</div>

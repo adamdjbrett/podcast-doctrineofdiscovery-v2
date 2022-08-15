@@ -1,0 +1,11 @@
+- menu: Episodes
+  url: /episodes
+
+- menu: Subscribe
+  url: /subscribe
+
+- menu: About
+  url: /about
+
+- menu: Support
+  url: https://doctrineofdiscovery.org/give/

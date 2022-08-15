@@ -1,0 +1,38 @@
+<main class="dark container-fluid""
+style="background-image: url('{{site.podcast.background}}');
+background-repeat: repeat;
+background-position: center;">
+
+<div class="container">
+
+<div class="row justify-content-center">
+
+<div class="col-md-12 p-3 p-md-5 text-center">
+<h2><strong><a href="/" class="text-white">
+{{site.podcast.title}}
+</a></strong></h2>
+</div>
+
+{% for post in site.posts limit:6 %}
+<a href="{{post.url}}" class="text-start col-md-4 p-3 mb-3 shadow element">
+<div class="border border-secondary">
+<img class="img-fluid crop" alt="podcast" width="600" height="400" src="{{post.image}}"/>
+<div class="p-3 text-light bg-dark">
+<p><small>{{ post.date | date_to_string }}</small></p>
+<h4><strong>
+{{post.title}}
+</strong></h4>
+</div>
+</div>
+</a>
+ {% endfor %}
+
+<div class="col-md-12 p-1 text-center">
+<a href="{{site.podcast.url}}" class="orange btn btn-lg btn-dark col-md-4 p-3 col-12">{{site.podcast.btn}}</a>
+</div>
+
+<div class="col-md-12 p-3 p-md-5"></div>
+</div>
+</div>
+
+</main>

@@ -1,0 +1,11 @@
+- image: /assets/img/icon-1.svg
+  alt: Apple Podcasts
+  url: https://podcasts.apple.com/us/podcast/mapping-the-doctrine-of-discovery/id1609802758
+
+- image: /assets/img/icon-2.svg
+  alt: Spotify
+  url: https://open.spotify.com/show/5VoYjujmNFCYS89vSsgl1c
+
+- image: /assets/img/pocketcasts.svg
+  alt: PocketCast
+  url: https://pca.st/ah3neigt

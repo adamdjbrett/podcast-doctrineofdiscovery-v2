@@ -1,0 +1,37 @@
+{%- include head.html -%}
+{%- include widget/navbar.html -%}
+
+<div class="container">
+<div class="row mt-5 border-botom border-secondary text-center">
+<div class="col-md-12 p-3 p-md-5 mt-5">
+<h1>
+<strong><a href="{{page.url}}" class="text-white">
+{{page.title}}
+</a></strong></h1>
+<p>{{page.description}}</p>
+</div>
+</div>
+</div>
+
+<div class="container">
+<div class="row justify-content-center text-center">
+{% for subs in site.data.subscribe %}
+<a href="{{subs.url}}" class="col-md-4 p-1 mb-3">
+<div class="p-3 p-md-5 text-light element btn-orange shadow rounded pods col-12">
+<img class="img-fluid" alt="podcast" width="80" height="80" src="{{subs.image}}"/>
+<h3 class="mt-5"><strong>
+{{subs.alt}}
+</strong></h3>
+<p>Subscribe →</p>
+</div>
+</a>
+{% endfor %}
+
+<div class="col-md-12 p-3 p-md-5"></div>
+</div>
+</div>
+
+  
+  
+
+  {%- include footer.html -%}
