@@ -1,12 +1,12 @@
 title: Posdcast Site
 description: Posdcast Site
-cover: /assets/img/mapping-doctrine-of-discovery-favicon.webp
-logo: /assets/img/dod-podcast-logo.svg
+cover: /assets/images/mapping-doctrine-of-discovery-favicon.webp
+logo: /assets/images/dod-podcast-logo.svg
 url: https://podcast.doctrineofdiscovery.org
 
 header:
-  background: /assets/img/hero-background.webp
-  cover: /assets/img/mapping-doctrine-of-discovery-favicon.webp
+  background: /assets/images/hero-background.webp
+  cover: /assets/images/mapping-doctrine-of-discovery-favicon.webp
   title: Welcome to Mapping the Doctrine of Discovery Podcast
   description: Presented by the Indigenous Values Initiative, American Indian Law Alliance.
   content: Helping listeners contextualize the Doctrine of Discovery.
@@ -22,22 +22,22 @@ podcast :
   title: Latest Episodes
   btn: Explore All
   url: /episodes
-  background: /assets/img/pattern.svg
+  background: /assets/images/pattern.svg
 
 patner:
   text: This project was supported by grants from the Syracuse University Engaged Humanities Network and the Henry Luce Foundation.
   title: Patners
   
 footer:
-  logo: /assets/img/blue-olive.svg
+  logo: /assets/images/blue-olive.svg
   copyright1: This podcast is licensed under the Creative Commons by the Indigenous Values Initiative and American Indian Law Alliance.
   copyright2: This site was created with Stackbit and is maintained by Adam DJ Brett.
 
 social: 
-  facebook: https://facebook.com/username
-  twitter: https://twitter.com/username
-  instagram: https://instagram.com/username
-  youtube: https://youtube.com/c/username
+  facebook: https://facebook.com/facebook.com/doctrine-of-Discovery-115693763603203
+  twitter: https://twitter.com/indigenousvalues
+  instagram: https://instagram.com/indigenousvalues
+  youtube: https://youtube.com/c/IndigenousValuesInitiative
 
 
 defaults:

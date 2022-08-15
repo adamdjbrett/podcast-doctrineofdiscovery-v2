@@ -2,7 +2,7 @@
 layout: page
 title: About Us
 description: This is the about page
-image: /assets/img/mapping-doctrine-of-discovery-favicon.webp
+image: /assets/images/mapping-doctrine-of-discovery-favicon.webp
 permalink: /about/
 sitemap:
   exclude: "yes"

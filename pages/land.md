@@ -2,7 +2,7 @@
 layout: page
 title:  Land Acknowledgement
 description: This is the Land Acknowledgement page
-image: /assets/img/onondaga-lake-east-shoreline.webp
+image: /assets/images/onondaga-lake-east-shoreline.webp
 permalink: /land/
 sitemap:
   exclude: "yes"

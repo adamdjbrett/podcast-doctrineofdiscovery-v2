@@ -2,7 +2,7 @@
 layout: page
 title: License
 description: This is license page
-image: /assets/img/mapping-doctrine-of-discovery-favicon.webp
+image: /assets/images/mapping-doctrine-of-discovery-favicon.webp
 permalink: /license/
 sitemap:
   exclude: "yes"

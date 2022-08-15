@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Contact
-description: Thank you for your interest in the Doctrine of Discovery Project you can contact us at info@doctrineofdiscovery.org
-image: /assets/img/mapping-doctrine-of-discovery-favicon.webp
+description: Thank you for your interest in the Doctrine of Discovery Project you can contact us at info@indigenousvalues.org
+image: /assets/images/mapping-doctrine-of-discovery-favicon.webp
 permalink: /contact/
 sitemap:
   exclude: "yes"
@@ -10,18 +10,21 @@ sitemap:
 
 <div class="text-center p-3 col-md-8 offset-md-2">
 
-  <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
+  <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/mdobawgz" method="post">
     <fieldset id="fs-frm-inputs">
       <label for="full-name">Full Name</label>
-      <input class="form-control" type="text" name="name" id="full-name" placeholder="Michael Bubbly" required="">
+      <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
       <label for="email-address">Email Address</label>
-      <input class="form-control" type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+      <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
       <label for="message">Message</label>
-      <textarea class="form-control"  rows="5" name="message" id="message" placeholder="What's the fizz?" required=""></textarea>
-      <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+      <textarea rows="5" name="message" id="message" placeholder="your message." required=""></textarea>
+      <input type="hidden" name="_subject" id="email-subject" value="Doctrine of Discovery Contact Form Submission">
+      <p>
+        <!-- replace with your recaptcha SITE key not secret key -->
+      <div class="g-recaptcha" data-sitekey="6LcJYCoeAAAAAMQIYRE5YiJRi-xCbHsc6ua7v6s4"></div>
+    </p>
     </fieldset>
-	<br/>
-    <input type="submit" class="btn orange p-3 float-end" value="Submit">
+    <input type="submit" value="Submit">
   </form>
 
 <!-- subs

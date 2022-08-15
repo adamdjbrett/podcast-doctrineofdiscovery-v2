@@ -2,7 +2,7 @@
 layout: page
 title: Privacy Policy
 description: This is privacy policy page
-image: /assets/img/mapping-doctrine-of-discovery-favicon.webp
+image: /assets/images/mapping-doctrine-of-discovery-favicon.webp
 permalink: /privacy-policy/
 sitemap:
   exclude: "yes"
