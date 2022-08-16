@@ -1,10 +1,10 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/18a5c789-268f-43cf-b4b9-f61aab5944db/deploy-status)](https://app.netlify.com/sites/podcast-doctrineofdiscovery/deploys)
 
-#Mapping the Doctrine of Discovery Podcast
+# Mapping the Doctrine of Discovery Podcast
 The official repository for our Podcast
 [Listen Now](https://podcast.doctrineofdiscovery.org/)
 
-##Description
+## Description
 
 This website uses the Podcaster theme originally developed by Stackbit but the theme and Stackbit support sunset in 2021.
 
