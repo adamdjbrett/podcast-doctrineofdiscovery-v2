@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: about
 title: About Us
 description: This is the about page
 image: /assets/images/mapping-doctrine-of-discovery-favicon.webp

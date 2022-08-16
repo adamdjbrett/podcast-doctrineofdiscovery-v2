@@ -1,14 +1,19 @@
 - image: /assets/images/indigenousvalues-2020.webp
   alt: Indigenous Values Initative
+  url: https://indigenousvalues.org/
 
-- image: /assets/images/AILA-circle-logo-sm.png
+- image: /assets/images/ailanew.webp
   alt: Ameerican Indian Law Alliance
+  url: https://www.aila.ngo/
 
-- image: /assets/images/syr_hendricks-chapel_small_1c-reverse_rgb-med.png
+- image: /assets/images/hendricknew.webp
   alt: Syracuse University Hendricks Chapel
+  url: https://chapel.syracuse.edu/
 
-- image: /assets/images/syracuse_horizontal_1line_knockout_white.webp
+- image: /assets/images/syracuse_horizontalnew.webp
   alt: Syracuse University
+  url: https://www.syracuse.edu/
 
-- image: /assets/images/luce-logo-full-mono-white-l.webp
+- image: /assets/images/lucenew.webp
   alt: Henry Luce Foundation
+  url: https://www.hluce.org/
