@@ -21,11 +21,12 @@ The goal of this Podcast is to help identify these systems of domination that ha
 ## Sponsors
 
 * [Henry Luce Foundation](https://www.hluce.org/)
-
-* [Syracuse University Engaged Humanities](https://thecollege.syr.edu/engaged-humanities/)
+* [Syracuse University Hendricks Chapel](https://chapel.syracuse.edu/)
 * [Syracuse University Department of Religion](https://thecollege.syr.edu/religion/)
 * [Indigenous Values Initiative](https://indigenousvalues.org/)
 * [American Indian Law Alliance](http://aila.ngo/)
+* Season 1: [Syracuse University Engaged Humanities](https://thecollege.syr.edu/engaged-humanities/)
+
 
 ## Credits
 

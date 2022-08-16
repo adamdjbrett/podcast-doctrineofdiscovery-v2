@@ -1,11 +1,14 @@
 - image: /assets/images/indigenousvalues-2020.webp
-  alt: sponsor
+  alt: Indigenous Values Initative
 
-- image: /assets/images/aila-square-sm.webp
-  alt: sponsor
+- image: /assets/images/AILA-circle-logo-sm.png
+  alt: Ameerican Indian Law Alliance
+
+- image: /assets/images/syr_hendricks-chapel_small_rgb.png
+  alt: Syracuse University Hendricks Chapel
 
 - image: /assets/images/syracuse_horizontal_1line_knockout_white.webp
-  alt: sponsor
+  alt: Syracuse University
 
 - image: /assets/images/luce-logo-full-mono-white-l.webp
-  alt: sponsor
+  alt: Henry Luce Foundation
