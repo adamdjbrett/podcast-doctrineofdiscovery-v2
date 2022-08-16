@@ -24,8 +24,11 @@ body ,.dark {
 .pods {
 	background-color: #212529;
 }
-p a:link,a:hover {
+p a:link,a:hover, li a:link,a:hover  {
 text-decoration: underline;
+}
+.nos a:link,a:hover  {
+text-decoration: none;
 }
 a:link,a:hover {
 text-decoration: none;
