@@ -5,7 +5,7 @@ description: Thank you for your interest in the Doctrine of Discovery Project yo
 image: /assets/images/mapping-doctrine-of-discovery-favicon.webp
 permalink: /contact/
 sitemap:
-  exclude: "yes"
+  exclude: "no"
 ---
 
 <div class="text-center p-3 col-md-8 offset-md-2">
