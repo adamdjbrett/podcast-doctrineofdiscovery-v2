@@ -11,8 +11,6 @@ This is a pragraph. Pellentesque habitant [morbi tristique](https://example.com)
 
 Wide image with caption.
 
-{% include image-caption.html imageurl="/assets/images/posts/2018/8.jpg#wide" title="Concrete roads" caption="This is caption" %}
-
 Images work too! Already know the URL of the image you want to include in your article? Simply paste it in like this to make it show up:
 
 ![Water in a shallow mountain valley in Kluane National Park](https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=903ce89f0256e0c19cde669fc69270a0#wide)
