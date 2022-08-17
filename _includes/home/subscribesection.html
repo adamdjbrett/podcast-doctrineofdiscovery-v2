@@ -1,5 +1,5 @@
 <section 
-style="background-image: url('assets/img/subscribe-background.webp');
+style="background-image: url('/assets/images/subscribe-background.webp');
 background-repeat: no-repeat;
 background-position: center;
 background-size: cover;"
@@ -8,7 +8,7 @@ background-size: cover;"
 <div class="row text-center text-white">
 
 <div class="col-md-12 p-3 p-md-5 mt-5">
-<h2><strong><a href="/" class="text-white">
+<h2 class="subs"><strong><a href="/" class="text-white">
 {{site.subscribe.title}}
 </a></strong></h2>
 </div>
@@ -16,7 +16,7 @@ background-size: cover;"
 <div href="/" class="col-md-4 p-1 mb-3">
 <img class="img-fluid" alt="{{ subs.alt }}" width="80" height="80" src="{{ subs.image }}"/>
 <p><strong>{{ subs.alt }}</strong></p>
-<a href="{{ subs.url }}" class="btn btn-dark pods">{{site.subscribe.btn}}</a>
+<p class="sub"><a href="{{ subs.url }}" class="btn btn-lg btn-dark pods sub">{{site.subscribe.btn}}</a></p>
 </div>
 {% endfor %}
 
