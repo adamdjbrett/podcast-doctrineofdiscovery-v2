@@ -25,7 +25,7 @@ podcast :
   background: /assets/images/pattern.svg
 
 patner:
-  text: This project was supported by grants from the Syracuse University Engaged Humanities Network and the Henry Luce Foundation.
+  text: This project is supported by grants from the Hendricks Chapel Syracuse University and the Henry Luce Foundation.
   title: Partners
   
 footer:
