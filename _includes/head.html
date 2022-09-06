@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Podcast</title>
+    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %} | {{ site.title }} </title>
 	   {% feed_meta %}
     {% seo %} 	
 <meta content='{{page.image}}' name='twitter:image'/>
