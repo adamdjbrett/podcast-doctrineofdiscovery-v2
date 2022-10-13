@@ -125,18 +125,3 @@ img {
   animation: pulse; 
   animation-duration: 1.5s;
 }
-/* blockquote */
-blockquote {
-    margin: 0 0 1em;
-    padding: 0 0 0 2.22222em;
-    position: relative;
-}
-blockquote:before {
-    color: currentColor;
-    content: "\201C";
-    font-size: 2.66667em;
-    left: 0;
-    line-height: 1;
-    position: absolute;
-    top: 0;
-}
