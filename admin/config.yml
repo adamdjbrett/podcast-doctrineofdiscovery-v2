@@ -1,0 +1,42 @@
+backend:
+  name: git-gateway
+  repo: adamdjbrett/podcast-doctrineofdiscovery-v2
+  branch: main # Branch to update (optional; defaults to master)
+media_folder: 'assets/uploads'
+
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: '_posts/'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+  #    - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Subtitle', name: 'subtitle', widget: 'text' }
+ #     - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Categories', name: 'categories', widget: 'string' }
+      - { label: 'Tags', name: 'tags', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'text' }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Image ALT', name: 'image_alt', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'page'
+    label: 'Page'
+    folder: 'pages/'
+    slug: '{{slug}}'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'page' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+ #     - { label: 'Subtitle', name: 'subtitle', widget: 'text' }
+ #     - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Permalink', name: 'permalink', widget: 'string'}
+      - { label: 'Body', name: 'body', widget: 'markdown' }
