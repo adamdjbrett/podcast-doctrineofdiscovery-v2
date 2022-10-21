@@ -63,6 +63,8 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-paginate-multiple
+  - jekyll-redirect-from
+  - jekyll-include-cache
 
 paginate: 6
 paginate_path: "/episodes/page:num/"
