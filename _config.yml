@@ -8,7 +8,7 @@ header:
   background: /assets/images/hero-background.webp
   cover: /assets/images/mapping-doctrine-of-discovery-favicon.webp
   title: Welcome to Mapping the Doctrine of Discovery Podcast
-  description: Presented by the Indigenous Values Initiative, American Indian Law Alliance.
+  description: Presented by the Indigenous Values Initiative.
   content: Helping listeners contextualize the Doctrine of Discovery.
   btn: Subscribe to Podcast
   btnurl: /subscribe
@@ -30,7 +30,7 @@ patner:
   
 footer:
   logo: /assets/images/blue-olive.svg
-  copyright1: This podcast is licensed under the Creative Commons by the Indigenous Values Initiative and American Indian Law Alliance.
+  copyright1: This podcast is licensed under the Creative Commons by the Indigenous Values Initiative.
   copyright2: This site was created with Stackbit and is maintained by Adam DJ Brett.
 
 social: 
