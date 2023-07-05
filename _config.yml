@@ -56,7 +56,7 @@ defaults:
       path: ""
     values:
       layout: "default"
-      permalink: /:title/
+
 
 
 plugins:
