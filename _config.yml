@@ -58,7 +58,6 @@ defaults:
       layout: "default"
 
 
-
 plugins:
   - jekyll-feed
   - jekyll-sitemap
