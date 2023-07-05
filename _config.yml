@@ -3,7 +3,6 @@ description: "The goal of this Podcast is to help identify these systems of domi
 cover: /assets/images/mapping-doctrine-of-discovery-favicon.webp
 logo: /assets/images/dod-podcast-logo.svg
 url: https://podcast.doctrineofdiscovery.org
-permalink: /:categories/:title/
 
 header:
   background: /assets/images/hero-background.webp
@@ -45,13 +44,14 @@ defaults:
   - scope:
       path:            pages/**/*.md
     values:
-      sitemap:         false
+      sitemap:         true
+      permalink: /:title/
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-      permalink: /:categories/:title:output_ext  
+      permalink: /:categories/:title/
   - scope:
       path: ""
     values:
