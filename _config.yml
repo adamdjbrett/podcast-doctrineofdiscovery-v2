@@ -44,7 +44,7 @@ defaults:
   - scope:
       path:            pages/**/*.md
     values:
-      sitemap:         true
+      sitemap:         false
       permalink: /:title/
   - scope:
       path: ""
