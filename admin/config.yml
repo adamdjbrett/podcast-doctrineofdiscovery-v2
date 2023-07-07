@@ -162,7 +162,7 @@ collections:
     slug: "{{slug}}"
     create: true
     editor:
-      preview: false
+      preview: true
     fields:
       - label: Layout
         name: layout
@@ -186,5 +186,3 @@ collections:
       - label: Body
         name: body
         widget: markdown
-            label: URL
-            widget: string
