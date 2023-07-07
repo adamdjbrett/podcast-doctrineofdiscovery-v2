@@ -5,13 +5,75 @@ backend:
 media_folder: 'assets/uploads'
 
 collections:
+  - name: "setiup"
+    label: "Settings"
+    extension: "yml"
+    editor:
+      preview: false
+    files:
+     - file: "_config.yml"
+       label: "Site Settup"
+       name: "config"
+       widget: list
+       fields:
+         - { name: 'logo', label: 'Logo', widget: 'image'}
+         - { name: 'title', label: 'Title', widget: 'string' }
+         - { name: 'description', label: 'Description', widget: 'string' }
+         - { name: 'url', label: 'URL', widget: 'string'}
+         - { name: 'cover', label: 'Cover', widget: 'image'}
+         - name: 'header'
+           label: 'Header' 
+           widget: 'object'
+           fields:
+            - { name: 'background', label: 'Background Image', widget: 'image' }
+            - { name: 'cover', label: 'Cover Image', widget: 'image' }
+            - { name: 'title', label: 'Menu Nav 2', widget: 'string' }
+            - { name: 'description', label: 'Menu Nav 2 URL', widget: 'string' }
+            - { name: 'content', label: 'Menu Nav 2 URL', widget: 'string' }
+            - { name: 'btn', label: 'Button', widget: 'string' }
+            - { name: 'btnurl', label: 'Button URL', widget: 'string' }
+         - name: 'subscribe'
+           label: 'Subscribe Area' 
+           widget: 'object'
+           fields:
+            - { name: 'title', label: 'Subscribe Title', widget: 'string' }
+            - { name: 'btn', label: 'Button', widget: 'string' }
+            - { name: 'link', label: 'Button URL', widget: 'string' }
+         - name: 'podcast'
+           label: 'Podcast Area' 
+           widget: 'object'
+           fields:
+            - { name: 'title', label: 'Podcast Title', widget: 'string' }
+            - { name: 'btn', label: 'Button', widget: 'string' }
+            - { name: 'url', label: 'Button URL', widget: 'string' }
+         - name: 'patner'
+           label: 'Patner Area' 
+           widget: 'object'
+           fields:
+            - { name: 'title', label: 'Patner Title', widget: 'string' }
+            - { name: 'text', label: 'Patner Text  Area', widget: 'string' }
+         - name: 'footer'
+           label: 'Footer Area' 
+           widget: 'object'
+           fields:
+            - { name: 'logo', label: 'Logo', widget: 'image' }
+            - { name: 'copyright1', label: 'Copyright 1', widget: 'string' }
+            - { name: 'copyright2', label: 'Copyright 2', widget: 'string' }
+         - name: 'social'
+           label: 'Social Media' 
+           widget: 'object'
+           fields:
+            - { name: 'facebook', label: 'Facebook', widget: 'string' }
+            - { name: 'twitter', label: 'Twitter', widget: 'string' }
+            - { name: 'instagram', label: 'Instagram', widget: 'string' }
+            - { name: 'youtube', label: 'Youtube', widget: 'string' }
   - name: 'blog'
     label: 'Blog'
     folder: '_posts/'
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     create: true
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
       - { label: 'Title', name: 'title', widget: 'string' }
@@ -37,6 +99,74 @@ collections:
       - { label: 'Description', name: 'description', widget: 'text' }
  #     - { label: 'Subtitle', name: 'subtitle', widget: 'text' }
  #     - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+         - { name: 'cover', label: 'Cover', widget: 'image'}
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Permalink', name: 'permalink', widget: 'string'}
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: "subscribes"
+    label: "Subscribe Settup"
+    extension: "yml"
+    editor:
+      preview: true
+    files:
+     - file: "/_data/subscribe.yml"
+       label: "Subscribe List"
+       name: "subscribe"
+       widget: list
+       fields:
+         - { name: 'image', label: 'Image', widget: 'image'}
+         - { name: 'alt', label: 'Alt Image', widget: 'string' }
+         - { name: 'url', label: 'URL', widget: 'string'}
+  - name: "sponsors"
+    label: "Sponsor Settup"
+    extension: "yml"
+    editor:
+      preview: true
+    files:
+     - file: "/_data/sponsor.yml"
+       label: "Sponsor List"
+       name: "sponsor"
+       widget: list
+       fields:
+         - { name: 'image', label: 'Image', widget: 'image'}
+         - { name: 'alt', label: 'Alt Image', widget: 'string' }
+         - { name: 'url', label: 'URL', widget: 'string'}
+  - name: "navs"
+    label: "Navigation Settup"
+    extension: "yml"
+    editor:
+      preview: false
+    files:
+     - file: "/_data/navigation.yml"
+       label: "Navgiation List"
+       name: "navigation"
+       widget: list
+       fields:
+         - { name: 'menu', label: 'Nav menu', widget: 'string' }
+         - { name: 'url', label: 'URL', widget: 'string'}
+  - name: "footers1"
+    label: "Footer 1 Settup"
+    extension: "yml"
+    editor:
+      preview: false
+    files:
+     - file: "/_data/footermenu1.yml"
+       label: "Footer 1 Menu"
+       name: "footermenu1"
+       widget: list
+       fields:
+         - { name: 'menu', label: 'Nav menu', widget: 'string' }
+         - { name: 'url', label: 'URL', widget: 'string'}
+  - name: "footers2"
+    label: "Footer 2 Settup"
+    extension: "yml"
+    editor:
+      preview: false
+    files:
+     - file: "/_data/footermenu2.yml"
+       label: "Footer 2 Menu"
+       name: "footermenu2"
+       widget: list
+       fields:
+         - { name: 'menu', label: 'Nav menu', widget: 'string' }
+         - { name: 'url', label: 'URL', widget: 'string'}
