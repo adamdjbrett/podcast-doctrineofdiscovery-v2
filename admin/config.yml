@@ -126,7 +126,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     create: true
     editor:
-      preview: true
+      preview: false
     fields:
       - label: Layout
         name: layout
@@ -162,7 +162,7 @@ collections:
     slug: "{{slug}}"
     create: true
     editor:
-      preview: true
+      preview: false
     fields:
       - label: Layout
         name: layout
