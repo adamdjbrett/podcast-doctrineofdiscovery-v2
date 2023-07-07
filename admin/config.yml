@@ -1,4 +1,3 @@
----
 backend:
   name: git-gateway
   repo: adamdjbrett/podcast-doctrineofdiscovery-v2
