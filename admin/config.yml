@@ -243,7 +243,7 @@ collections:
           - name: url
             label: URL
             widget: string
-  - name: footers1
+  - name: footermenu1
     label: Footer 1 Settup
     extension: yml
     editor:
@@ -251,7 +251,7 @@ collections:
     files:
       - file: /_data/footermenu1.yml
         label: Footer 1 Menu
-        name: footermenu1
+        name: footers
         widget: list
         fields:
           - name: menu
