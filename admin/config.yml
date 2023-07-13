@@ -1,42 +1,188 @@
 backend:
   name: git-gateway
   repo: adamdjbrett/podcast-doctrineofdiscovery-v2
-  branch: main # Branch to update (optional; defaults to master)
-media_folder: 'assets/uploads'
-
+  branch: main
+media_folder: assets/uploads
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: '_posts/'
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+  - name: setiup
+    label: Settings
+    extension: yml
+    editor:
+      preview: false
+    files:
+      - file: _config.yml
+        label: Site Settup
+        name: config
+        widget: list
+        fields:
+          - name: logo
+            label: Logo
+            widget: image
+          - name: title
+            label: Title
+            widget: string
+          - name: description
+            label: Description
+            widget: string
+          - name: url
+            label: URL
+            widget: string
+          - name: cover
+            label: Cover
+            widget: image
+          - name: header
+            label: Header
+            widget: object
+            fields:
+              - name: background
+                label: Background Image
+                widget: image
+              - name: cover
+                label: Cover Image
+                widget: image
+              - name: title
+                label: Menu Nav 2
+                widget: string
+              - name: description
+                label: Menu Nav 2 URL
+                widget: string
+              - name: content
+                label: Menu Nav 2 URL
+                widget: string
+              - name: btn
+                label: Button
+                widget: string
+              - name: btnurl
+                label: Button URL
+                widget: string
+          - name: subscribe
+            label: Subscribe Area
+            widget: object
+            fields:
+              - name: title
+                label: Subscribe Title
+                widget: string
+              - name: btn
+                label: Button
+                widget: string
+              - name: link
+                label: Button URL
+                widget: string
+          - name: podcast
+            label: Podcast Area
+            widget: object
+            fields:
+              - name: title
+                label: Podcast Title
+                widget: string
+              - name: btn
+                label: Button
+                widget: string
+              - name: url
+                label: Button URL
+                widget: string
+          - name: patner
+            label: Patner Area
+            widget: object
+            fields:
+              - name: title
+                label: Patner Title
+                widget: string
+              - name: text
+                label: Patner Text  Area
+                widget: string
+          - name: footer
+            label: Footer Area
+            widget: object
+            fields:
+              - name: logo
+                label: Logo
+                widget: image
+              - name: copyright1
+                label: Copyright 1
+                widget: string
+              - name: copyright2
+                label: Copyright 2
+                widget: string
+          - name: social
+            label: Social Media
+            widget: object
+            fields:
+              - name: facebook
+                label: Facebook
+                widget: string
+              - name: twitter
+                label: Twitter
+                widget: string
+              - name: instagram
+                label: Instagram
+                widget: string
+              - name: youtube
+                label: Youtube
+                widget: string
+  - name: blog
+    label: Blog
+    folder: _posts/
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     create: true
     editor:
       preview: false
     fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
-      - { label: 'Title', name: 'title', widget: 'string' }
-  #    - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Subtitle', name: 'subtitle', widget: 'text' }
- #     - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Categories', name: 'categories', widget: 'string' }
-      - { label: 'Tags', name: 'tags', widget: 'string' }
-      - { label: 'Excerpt', name: 'excerpt', widget: 'text' }
-      - { label: 'Image', name: 'image', widget: 'image' }
-      - { label: 'Image ALT', name: 'image_alt', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-  - name: 'page'
-    label: 'Page'
-    folder: 'pages/'
-    slug: '{{slug}}'
+      - label: Layout
+        name: layout
+        widget: hidden
+        default: post
+      - label: Title
+        name: title
+        widget: string
+      - label: Subtitle
+        name: subtitle
+        widget: text
+      - label: Categories
+        name: categories
+        widget: string
+      - label: Tags
+        name: tags
+        widget: string
+      - label: Excerpt
+        name: excerpt
+        widget: text
+      - label: Image
+        name: image
+        widget: image
+      - label: Image ALT
+        name: image_alt
+        widget: string
+      - label: Body
+        name: body
+        widget: markdown
+  - name: page
+    label: Page
+    folder: pages/
+    slug: "{{slug}}"
     create: true
     editor:
       preview: false
     fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'page' }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'text' }
- #     - { label: 'Subtitle', name: 'subtitle', widget: 'text' }
- #     - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Image', name: 'image', widget: 'image' }
-      - { label: 'Permalink', name: 'permalink', widget: 'string'}
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: Layout
+        name: layout
+        widget: hidden
+        default: page
+      - label: Title
+        name: title
+        widget: string
+      - label: Description
+        name: description
+        widget: text
+      - name: cover
+        label: Cover
+        widget: image
+      - label: Image
+        name: image
+        widget: image
+      - label: Permalink
+        name: permalink
+        widget: string
+      - label: Body
+        name: body
+        widget: markdown
