@@ -19,4 +19,5 @@ group :jekyll_plugins do
   gem 'jekyll-paginate-multiple'
   gem 'jekyll-redirect-from'
   gem 'jekyll-include-cache'
+  gem 'jekyll-minifier'
 end
