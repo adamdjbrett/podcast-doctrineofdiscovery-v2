@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   repo: adamdjbrett/podcast-doctrineofdiscovery-v2
   branch: main
-media_folder: assets/uploads
+media_folder: assets/
 collections:
   - name: setiup
     label: Settings
@@ -186,3 +186,70 @@ collections:
       - label: Body
         name: body
         widget: markdown
+
+
+  - name: "subscribe"
+    label: "Subscribe Page"
+    extension: "md"
+    editor:
+      preview: false
+    files:
+     - file: "pages/subscribe.md"
+       label: "Subscribe Page Area"
+       name: "index"
+       widget: "object"
+       fields:
+          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'subscribe' }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: 'Permalink', name: 'permalink', widget: 'string' }
+          - name: 'shop'
+            label: 'Subscribe list' 
+            widget: 'list'
+            fields:
+             - { name: 'title', label: 'Title', widget: 'string' }
+             - { name: 'icon', label: 'Icon', widget: 'image' }
+             - { name: 'link', label: 'Link URL', widget: 'string' }
+  - name: "wid"
+    label: "Widget"
+    extension: "yml"
+    editor:
+      preview: false
+    files:
+     - file: "_data/widget.yml"
+       label: "Widget Area"
+       name: "widget"
+       widget: "object"
+       fields:
+          - name: 'nav'
+            label: 'Nav Section' 
+            widget: 'list'
+            fields:
+              - { name: 'menu', label: 'Nav Name', widget: 'string' }
+              - { name: 'url', label: 'URL Link', widget: 'string' }
+          - name: 'mainsub'
+            label: 'Main Subscribe' 
+            widget: 'list'
+            fields:
+              - { name: 'image', label: 'Image', widget: 'image' }
+              - { name: 'alt', label: 'Name', widget: 'string' }
+              - { name: 'url', label: 'URL Link', widget: 'string' }
+          - name: 'sponsor'
+            label: 'Sponsor' 
+            widget: 'list'
+            fields:
+              - { name: 'image', label: 'Image', widget: 'image' }
+              - { name: 'alt', label: 'Name', widget: 'string' }
+              - { name: 'url', label: 'URL Link', widget: 'string' }
+          - name: 'footer1'
+            label: 'Footer Section 1' 
+            widget: 'list'
+            fields:
+              - { name: 'menu', label: 'Nav Name', widget: 'string' }
+              - { name: 'url', label: 'URL Link', widget: 'string' }
+          - name: 'footer2'
+            label: 'Footer Section 2' 
+            widget: 'list'
+            fields:
+              - { name: 'menu', label: 'Nav Name', widget: 'string' }
+              - { name: 'url', label: 'URL Link', widget: 'string' }
