@@ -25,7 +25,7 @@ shop:
    icon: /assets/images/icon/ti.svg
    link:  https://doctrineofdiscovery.org/s/tunein/
  - title: Amazon
-   icon: /assets/images/icon/am.svg
+   icon: /assets/images/icon/am1.svg
    link: https://doctrineofdiscovery.org/s/amazon/
  - title: Audible
    icon: /assets/images/icon/au.svg
