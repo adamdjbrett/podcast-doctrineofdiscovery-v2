@@ -26,12 +26,22 @@
 </div>
 </a>
 {% endfor %}
+{% assign sorted = page.shop | sort: 'title' %}
+{% for s in sorted %}
+<a href="{{s.link}}" class="col-md-4 p-1 mb-3">
+<div class="p-3 p-md-5 text-light element btn-orange shadow rounded pods col-12">
+<img class="img-fluid" alt="podcast" width="80" height="80" src="{{s.icon}}"/>
+<h3 class="mt-5"><strong>
+{{s.title}}
+</strong></h3>
+<p>Subscribe →</p>
+</div>
+</a>
+{% endfor %}
 
 <div class="col-md-12 p-3 p-md-5"></div>
 </div>
 </div>
 
   
-  
-
-  {%- include footer.html -%}
+{%- include footer.html -%}

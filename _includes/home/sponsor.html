@@ -5,7 +5,7 @@
 <p>{{site.patner.text}}</p>
 <h2 class="subs"><strong>{{site.patner.title}}</strong></h2>
 </div>
-{% for sponsor in site.data.sponsor %}
+{% for sponsor in site.data.widget.sponsor %}
 <div class="col-md-3 p-3">
 <a href="{{ sponsor.url }}" target="_blank" title="{{ sponsor.alt }}"><img class="img-fluid" alt="{{ sponsor.alt }}" width="200" height="200" src="{{ sponsor.image }}"/></a>
 </div>

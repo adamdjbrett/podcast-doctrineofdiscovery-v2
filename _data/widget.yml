@@ -1,0 +1,57 @@
+nav: 
+  - menu: Episodes
+    url: /episodes
+  - menu: About
+    url: /about
+  - menu: Land
+    url: /land
+  - menu: Contact
+    url: /contact
+  - menu: Learn More
+    url: https://doctrineofdiscovery.org/
+
+mainsub: 
+  - image: /assets/images/icon-1.svg
+    alt: Apple Podcasts
+    url: https://podcasts.apple.com/us/podcast/mapping-the-doctrine-of-discovery/id1609802758
+  - image: /assets/images/icon-2.svg
+    alt: Spotify
+    url: https://open.spotify.com/show/5VoYjujmNFCYS89vSsgl1c
+  - image: /assets/images/pocketcasts.svg
+    alt: PocketCast
+    url: https://pca.st/ah3neigt
+ 
+sponsor: 
+  - image: /assets/images/indigenousvalues-2020.webp
+    alt: Indigenous Values Initative
+    url: https://indigenousvalues.org/ 
+  - image: /assets/images/hendricknew.webp
+    alt: Syracuse University Hendricks Chapel
+    url: https://chapel.syracuse.edu/ 
+  - image: /assets/images/syracuse_horizontalnew.webp
+    alt: Syracuse University
+    url: https://www.syracuse.edu/ 
+  - image: /assets/images/lucenew.webp
+    alt: Henry Luce Foundation
+    url: https://www.hluce.org/ 
+
+footer1:
+  - menu: Episodes
+    url: /episodes
+  - menu: Subscribe
+    url: /subscribe
+  - menu: About
+    url: /about
+  - menu: Support
+    url: https://doctrineofdiscovery.org/give/
+
+footer2: 
+  - menu: Land Acknowledgement
+    url: /land
+  - menu: Doctrine of Discovery (main)
+    url: https://doctrineofdiscovery.org/
+  - menu: License
+    url: /license
+  - menu: Privacy Policy
+    url: /privacy-policy
+ 

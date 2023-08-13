@@ -9,7 +9,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 p-3">
-	  {% for nav in site.data.navigation %}
+	  {% for nav in site.data.widget.nav %}
         <li class="nav-item nos">
           <a class="nav-link nos text-white" title="{{nav.menu}}" href="{{nav.url}}">{{nav.menu}}</a>
         </li>
