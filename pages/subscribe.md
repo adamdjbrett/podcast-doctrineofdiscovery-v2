@@ -3,6 +3,9 @@ layout: subscribe
 title: Subscribe
 description: Pick your favorite podcast platform
 shop:
+ - title: Podbay
+   icon: /assets/images/icon/podbay.svg
+   link: https://doctrineofdiscovery.org/s/podbay
  - title: PlayerFM
    icon: /assets/images/icon/pm.svg
    link:  https://doctrineofdiscovery.org/s/playerfm
