@@ -3,6 +3,9 @@ layout: subscribe
 title: Subscribe
 description: Pick your favorite podcast platform
 shop:
+ - title: Podtail
+   icon: /assets/images/icon/podtail.svg
+   link: https://doctrineofdiscovery.org/podtail/
  - title: Podbay
    icon: /assets/images/icon/podbay.svg
    link: https://doctrineofdiscovery.org/s/podbay
