@@ -3,6 +3,9 @@ layout: subscribe
 title: Subscribe
 description: Pick your favorite podcast platform
 shop:
+ - title: "Radio.net"
+   icon: /assets/images/icon/radio-net.webp
+   link: https://www.radio.net/podcast/mapping-the-doctrine-of-discovery
  - title: Podtail
    icon: /assets/images/icon/podtail.svg
    link: https://doctrineofdiscovery.org/podtail/
