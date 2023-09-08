@@ -49,23 +49,22 @@
 	</div>
 	{{content}}
 </section>
+
+
 <div class="row mt-5">
 <div class="col-md-6 text-start">
     {% if page.previous.url %}
-    <a href="{{page.previous.url}}" class="text-start  btn orange">&laquo; Previous</a>
-	<!-- use this if you want to display title page -->
-    <!-- <a href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a> -->
+    <a href="{{page.previous.url}}" class="text-start btn btn-orange">&laquo; Previous</a>
+	{% else %}
     {% endif %}
   </div>
   <div class="col-md-6 text-end">
     {% if page.next.url %}	
-    <a href="{{page.next.url}}" class="text-end btn orange">Next &raquo;</a>
-	<!-- use this if you want to display title page -->
-    <!-- <a href="{{page.next.url}}">{{page.next.title}} &raquo;</a> -->
+    <a href="{{page.next.url}}" class="text-end btn btn-orange">Next &raquo;</a>
+	{% else %}
     {% endif %}
   </div>
 </div>  
-
 
 </div>
 </div>
