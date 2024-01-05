@@ -1,11 +1,12 @@
 repo_name: adamdjbrett/podcast-doctrineofdiscovery-v2
 report_id: 92537a2705a9d25822de3bc715da1b9b
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-15T03:25:06+00:00'
+timestamp: '2024-01-05T08:43:08+00:00'
 requested_by: adamdjbrett
 provider: github
 branch: main
-detected_tools_count: 8
+detected_tools_count: 13
 tools:
 - name: Ruby
   description: A dynamic, interpreted, open source programming language with a focus
@@ -16,7 +17,20 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/989/ruby.png
+  detection_source_url: https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2
   detection_source: Repo Metadata
+- name: pgvector
+  description: Open-source vector similarity search for Postgres
+  website_url: https://github.com/pgvector/pgvector/
+  open_source: false
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Database Tools
+  image_url: https://img.stackshare.io/service/109221/default_b888cdf5617d936aa6aacf130911906955508639.png
+  detection_source_url: https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/blob/main/humans.txt
+  detection_source: humans.txt
+  last_updated_by: Adam DJ Brett
+  last_updated_on: 2022-08-16 20:43:51.000000000 Z
 - name: Git
   description: Fast, scalable, distributed revision control system
   website_url: http://git-scm.com/
@@ -25,6 +39,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2
   detection_source: Repo Metadata
 - name: RubyGems
   description: Easily download, install, and use ruby software packages on your system
@@ -34,9 +49,32 @@ tools:
   category: Build, Test, Deploy
   sub_category: Package Managers
   image_url: https://img.stackshare.io/service/12795/5jL6-BA5_400x400.jpeg
+  detection_source_url: https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/blob/main/Gemfile
   detection_source: Gemfile
   last_updated_by: Adam DJ Brett
   last_updated_on: 2022-08-15 02:55:03.000000000 Z
+- name: HTML
+  description: Hypertext Markup Language for creating web pages.
+  website_url: http://
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/2270/no-img-open-source.png
+  detection_source_url: https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/blob/main/_includes/archive.html
+  detection_source: _includes/archive.html
+  last_updated_by: Adam DJ Brett
+  last_updated_on: 2022-08-15 02:55:03.000000000 Z
+- name: LangChain
+  description: Build AI apps with LLMs through composability
+  website_url: https://github.com/hwchase17/langchain
+  open_source: true
+  hosted_saas: false
+  category: Communications
+  sub_category: Large Language Model Tools
+  image_url: https://img.stackshare.io/service/48790/default_5b6c6b73f1ff3775c85d2a1ba954cb87e30cbf13.jpg
+  detection_source_url: https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/blob/main/humans.txt
+  detection_source: humans.txt
+  last_updated_by: Adam DJ Brett
+  last_updated_on: 2022-08-16 20:43:51.000000000 Z
 - name: jekyll-feed
   description: A Jekyll plugin to generate an Atom feed of your Jekyll posts
   package_url: https://rubygems.org/jekyll-feed
@@ -47,7 +85,7 @@ tools:
   category: Libraries
   sub_category: RubyGems Packages
   image_url: https://img.stackshare.io/package/19149/default_b0a1033a29112f6f50b1dd3157e5fbf94dd2778a.png
-  detection_source_url: Gemfile.lock
+  detection_source_url: https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/blob/main/Gemfile.lock
   detection_source: Gemfile
   last_updated_by: chromers
   last_updated_on: 2023-07-26 05:23:40.000000000 Z
@@ -61,7 +99,21 @@ tools:
   category: Libraries
   sub_category: RubyGems Packages
   image_url: https://img.stackshare.io/package/19371/default_ac0591cdb829f62a4300d942f96aea1bb642351d.png
-  detection_source_url: Gemfile.lock
+  detection_source_url: https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/blob/main/Gemfile.lock
+  detection_source: Gemfile
+  last_updated_by: chromers
+  last_updated_on: 2023-07-26 05:23:40.000000000 Z
+- name: jekyll-redirect-from
+  description: Seamlessly specify multiple redirection URLs for your pages and posts
+  package_url: https://rubygems.org/jekyll-redirect-from
+  version: 0.16.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: RubyGems Packages
+  image_url: https://img.stackshare.io/package/rubygems/image.png
+  detection_source_url: https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/blob/main/Gemfile.lock
   detection_source: Gemfile
   last_updated_by: chromers
   last_updated_on: 2023-07-26 05:23:40.000000000 Z
@@ -76,7 +128,7 @@ tools:
   category: Libraries
   sub_category: RubyGems Packages
   image_url: https://img.stackshare.io/package/19137/default_302643c2b99caa1c440c0d4aa23d4230e1cc78e3.png
-  detection_source_url: Gemfile.lock
+  detection_source_url: https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/blob/main/Gemfile.lock
   detection_source: Gemfile
   last_updated_by: chromers
   last_updated_on: 2023-07-26 05:23:40.000000000 Z
@@ -90,10 +142,24 @@ tools:
   category: Libraries
   sub_category: RubyGems Packages
   image_url: https://img.stackshare.io/package/19321/default_31ccb7684f50eae9f0c40cb9965cc32299f8935e.png
-  detection_source_url: Gemfile.lock
+  detection_source_url: https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/blob/main/Gemfile.lock
   detection_source: Gemfile
   last_updated_by: chromers
   last_updated_on: 2023-07-26 05:23:40.000000000 Z
+- name: wdm
+  description: Windows Directory Monitor
+  package_url: https://rubygems.org/wdm
+  version: 0.1.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: RubyGems Packages
+  image_url: https://img.stackshare.io/package/rubygems/image.png
+  detection_source_url: https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/blob/main/Gemfile.lock
+  detection_source: Gemfile
+  last_updated_by: Adam DJ Brett
+  last_updated_on: 2022-08-15 02:55:03.000000000 Z
 - name: webrick
   description: WEBrick is an HTTP server toolkit that can be configured as an HTTPS
     server
@@ -105,7 +171,7 @@ tools:
   category: Libraries
   sub_category: RubyGems Packages
   image_url: https://img.stackshare.io/package/19444/default_e747a715ce0379afdb68c78657d70e4a512bf5f4.png
-  detection_source_url: Gemfile.lock
+  detection_source_url: https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/blob/main/Gemfile.lock
   detection_source: Gemfile
   last_updated_by: Adam DJ Brett
   last_updated_on: 2022-08-16 20:43:51.000000000 Z
