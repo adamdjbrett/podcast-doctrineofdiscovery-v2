@@ -19,6 +19,12 @@ Following 15<sup>th</sup> century Christian imperialism, through to the 19<sup>t
 
 The goal of this Podcast is to help identify these systems of domination that have been sustained by greed and power, through the subjugation of human beings and the natural world.
 
+## Seasons
+* [Season 1](https://podcast.doctrineofdiscovery.org/categories#season1)
+* [Season 2](https://podcast.doctrineofdiscovery.org/categories#season2)
+* [Season 3](https://podcast.doctrineofdiscovery.org/categories#season3)
+* [Special Season Doctrine of Christian Discovery](https://podcast.doctrineofdiscovery.org/categories#special)
+
 ## Sponsors
 
 * [Henry Luce Foundation](https://www.hluce.org/)
