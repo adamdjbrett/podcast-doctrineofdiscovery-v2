@@ -23,7 +23,10 @@ The goal of this Podcast is to help identify these systems of domination that ha
 * [Season 1](https://podcast.doctrineofdiscovery.org/categories#season1)
 * [Season 2](https://podcast.doctrineofdiscovery.org/categories#season2)
 * [Season 3](https://podcast.doctrineofdiscovery.org/categories#season3)
-* [Special Season Doctrine of Christian Discovery](https://podcast.doctrineofdiscovery.org/categories#special)
+* [Special Season Doctrine of Christian Discovery](https://megaphone.link/AOOOI9257433215)
+
+<iframe src="https://playlist.megaphone.fm/?p=AOOOI2818414790" width="100%" height="482" frameborder="0"></iframe>
+
 
 ## Sponsors
 
