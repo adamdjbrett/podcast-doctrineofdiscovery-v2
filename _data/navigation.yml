@@ -7,6 +7,9 @@
 - menu: Land
   url: /land
 
+- menu: Search
+  ur: /search
+
 - menu: Contact
   url: /contact
 
