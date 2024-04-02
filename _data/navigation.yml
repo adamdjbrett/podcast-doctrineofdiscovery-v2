@@ -8,7 +8,7 @@
   url: /land
 
 - menu: Search
-  ur: /search
+  url: /search
 
 - menu: Contact
   url: /contact
