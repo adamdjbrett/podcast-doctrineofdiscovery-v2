@@ -1,8 +1,6 @@
-- menu: Episodes
-  url: /episodes
-- menu: Subscribe
-  url: /subscribe
 - menu: About
   url: /about
+- menu: Episodes
+  url: /episodes
 - menu: Search
   url: /search

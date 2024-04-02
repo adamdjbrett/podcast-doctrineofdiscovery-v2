@@ -4,9 +4,6 @@
 - menu: About
   url: /about
 
-- menu: Land
-  url: /land
-
 - menu: Search
   url: /search
 
