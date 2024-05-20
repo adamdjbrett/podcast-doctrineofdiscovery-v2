@@ -15,6 +15,9 @@ shop:
  - title: PlayerFM
    icon: /assets/images/icon/pm.svg
    link:  https://doctrineofdiscovery.org/s/playerfm
+ - title: Youtube Podcasts
+   icon: /assets/images/icon/youtube.svg
+   link: https://www.youtube.com/@IndigenousValuesInitiative/podcasts
  - title: Podcast Addict
    icon: /assets/images/icon/pa.svg
    link:  https://doctrineofdiscovery.org/s/podcastaddict
