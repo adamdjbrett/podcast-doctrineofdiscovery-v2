@@ -19,12 +19,19 @@ Following 15<sup>th</sup> century Christian imperialism, through to the 19<sup>t
 
 The goal of this Podcast is to help identify these systems of domination that have been sustained by greed and power, through the subjugation of human beings and the natural world.
 
+## Metadata & Citation Library
+* [Mapping the Dcotrine of Discovery Zotero Library](https://www.zotero.org/groups/5628442/mapping_the_doctrine_of_discovery)
+* [The Doctrine of Christian Discovery Podcast Zotero Library](https://www.zotero.org/groups/5628453/doctrine_of_christian_discovery_podcast)
+
 ## Seasons
 * [Season 1](https://podcast.doctrineofdiscovery.org/categories#season1)
 * [Season 2](https://podcast.doctrineofdiscovery.org/categories#season2)
 * [Season 3](https://podcast.doctrineofdiscovery.org/categories#season3)
+* [Season 4](https://podcast.doctrineofdiscovery.org/categories#season4)
 * [Special Season Doctrine of Christian Discovery](https://megaphone.link/AOOOI9257433215)
 
+## Special Season
+### The Doctrine of Christian Discovery
 <iframe src="https://playlist.megaphone.fm/?p=AOOOI2818414790" width="100%" height="482" frameborder="0"></iframe>
 
 
