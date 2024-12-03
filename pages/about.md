@@ -29,6 +29,7 @@ The goal of this Podcast is to help identify these systems of domination that ha
 * [Season 3](https://podcast.doctrineofdiscovery.org/categories#season3)
 * [Season 4](https://podcast.doctrineofdiscovery.org/categories#season4)
 * [Special Season Doctrine of Christian Discovery](https://megaphone.link/AOOOI9257433215)
+* [Seaon 5](https://podcast.doctrineofdiscovery.org/categories#season4)
 
 ## Special Season
 ### The Doctrine of Christian Discovery
