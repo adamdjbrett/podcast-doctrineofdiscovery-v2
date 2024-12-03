@@ -1,6 +1,8 @@
 nav: 
   - menu: Episodes
     url: /episodes
+  - menu: Index
+    url: /episode-index
   - menu: About
     url: /about
   - menu: Land
@@ -50,9 +52,11 @@ footer1:
     url: https://doctrineofdiscovery.org/give/
 
 footer2: 
+  - menu: Episode Index
+    url: /episode-index
   - menu: Land Acknowledgement
     url: /land
-  - menu: Doctrine of Discovery (main)
+  - menu: Doctrine of Discovery Project (main)
     url: https://doctrineofdiscovery.org/
   - menu: License
     url: /license

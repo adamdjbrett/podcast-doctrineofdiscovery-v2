@@ -7,28 +7,16 @@ permalink: /episode-index/
 sitemap:
  exclude: "no"
 ---
-
-## [Special Season Doctrine of Christian Discovery](https://megaphone.link/AOOOI9257433215)
-Produced with Good Faith Media
-1. [Betty Lyons: Understanding the Doctrine](https://podcast.doctrineofdiscovery.org/special/s01/).
-2. [Robert J. Miller: Property & Sovereignty](https://podcast.doctrineofdiscovery.org/special/s03/).
-3. [Robert P. Jones: White Supremacy’s Roots](https://podcast.doctrineofdiscovery.org/special/s02/).
-4. [Gustavo Melo Cerqueira & Danielle N. Boaz: Religious Racism](https://podcast.doctrineofdiscovery.org/special/s04/).
-5. [Steven Newcomb & JoDe Goudy: U.S. Law](https://podcast.doctrineofdiscovery.org/special/s05/).
-6. [Eve Reyes-Aguirre: Environment & Creation](https://podcast.doctrineofdiscovery.org/special/s06/).
-7. [João Chaves: The Doctrine of Christian Discovery's Influence in the Americas](https://podcast.doctrineofdiscovery.org/special/s07/).
-8. [Mitch Randall: Countering Conversion](https://podcast.doctrineofdiscovery.org/special/s08/).
-
 ## Regular Seasons
+
 ### Season 1
 0. [Episode 0: Introduction to Mapping the Doctrine of Discovery Podcast](https://podcast.doctrineofdiscovery.org/season1/episode-0/).
-1. [S01E01: The Legal Framework of the Doctrine of Christian Discovery in Practice with Joe Heath](https://podcast.doctrineofdiscovery.org/season1/episode-01/).
-2. [S01E03: The Doctrine of Discovery in the Mesoamerican Context with Davíd Carrasco](https://podcast.doctrineofdiscovery.org/season1/episode-03/).
-3. [S01E03: The Doctrine of Discovery in the Mesoamerican Context with Davíd Carrasco](https://podcast.doctrineofdiscovery.org/season1/episode-03/).
+1. [S01E01: The Legal Framework of the Doctrine of Christian Discovery in Practice with Joe Heath](https://podcast.doctrineofdiscovery.org/season1/episode-01/)
+2. [S01E03: The Doctrine of Discovery in the Mesoamerican Context with Davíd Carrasco](https://podcast.doctrineofdiscovery.org/season1/episode-03/)
+3. [S01E03: The Doctrine of Discovery in the Mesoamerican Context with Davíd Carrasco](https://podcast.doctrineofdiscovery.org/season1/episode-03/)
 4. [S01E04: Haudenosaunee Influence on the Women’s Rights Movement with Sally Roesch Wagner](https://podcast.doctrineofdiscovery.org/season1/episode-04/)
 5. [S01E05: The Doctrine of Discovery in the context of Abya Yala with Tupac Enrique Acosta](https://podcast.doctrineofdiscovery.org/season1/episode-05/)
-
-
+  
 ### Season 2
 1. [S02E01: The Backstory of Johnson v. M'Intosh with Lindsay Robertson](https://podcast.doctrineofdiscovery.org/season2/episode-01/)
 2. [S02E02: The International Dimensions of Johnson v. M’Intosh with Robert J. Miller](https://podcast.doctrineofdiscovery.org/season2/episode-02/)
@@ -60,3 +48,14 @@ Produced with Good Faith Media
 2. [S05E02: Exploring the Legacy of Vine Deloria Jr. on Native American Thought with Philip Deloria](https://podcast.doctrineofdiscovery.org/season5/episode-02/) 
 3. [S05E03: Reclaiming Faith: Dismantling white Christian Supremacy and Healing Through Indigenous Spirituality with Soulforce](https://podcast.doctrineofdiscovery.org/season5/episode-03/)
 4. [S05E04: Unveiling the Doctrine of Discovery: Historical Injustice and Pathways to Healing with Steven J. Schwartzberg](https://podcast.doctrineofdiscovery.org/season5/episode-04/)
+
+## [Special Season Doctrine of Christian Discovery](https://megaphone.link/AOOOI9257433215)
+*Produced by Good Faith Media*
+1. [Betty Lyons: Understanding the Doctrine](https://podcast.doctrineofdiscovery.org/special/s01/)
+2. [Robert J. Miller: Property & Sovereignty](https://podcast.doctrineofdiscovery.org/special/s03/)
+3. [Robert P. Jones: White Supremacy’s Roots](https://podcast.doctrineofdiscovery.org/special/s02/)
+4. [Gustavo Melo Cerqueira & Danielle N. Boaz: Religious Racism](https://podcast.doctrineofdiscovery.org/special/s04/)
+5. [Steven Newcomb & JoDe Goudy: U.S. Law](https://podcast.doctrineofdiscovery.org/special/s05/)
+6. [Eve Reyes-Aguirre: Environment & Creation](https://podcast.doctrineofdiscovery.org/special/s06/)
+7. [João Chaves: The Doctrine of Christian Discovery's Influence in the Americas](https://podcast.doctrineofdiscovery.org/special/s07/)
+8. [Mitch Randall: Countering Conversion](https://podcast.doctrineofdiscovery.org/special/s08/)
