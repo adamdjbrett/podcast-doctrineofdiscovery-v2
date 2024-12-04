@@ -12,7 +12,7 @@ sitemap:
 ### Season 1
 0. [Episode 0: Introduction to Mapping the Doctrine of Discovery Podcast](https://podcast.doctrineofdiscovery.org/season1/episode-0/).
 1. [S01E01: The Legal Framework of the Doctrine of Christian Discovery in Practice with Joe Heath](https://podcast.doctrineofdiscovery.org/season1/episode-01/)
-2. [S01E03: The Doctrine of Discovery in the Mesoamerican Context with Davíd Carrasco](https://podcast.doctrineofdiscovery.org/season1/episode-03/)
+2. [S01E02: The Doctrine Of Christian Discovery As An Ideological And Legal Framework with Steven T. Newcomb](https://podcast.doctrineofdiscovery.org/season1/episode-02/)
 3. [S01E03: The Doctrine of Discovery in the Mesoamerican Context with Davíd Carrasco](https://podcast.doctrineofdiscovery.org/season1/episode-03/)
 4. [S01E04: Haudenosaunee Influence on the Women’s Rights Movement with Sally Roesch Wagner](https://podcast.doctrineofdiscovery.org/season1/episode-04/)
 5. [S01E05: The Doctrine of Discovery in the context of Abya Yala with Tupac Enrique Acosta](https://podcast.doctrineofdiscovery.org/season1/episode-05/)
