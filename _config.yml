@@ -13,6 +13,14 @@ header:
   btn: Subscribe to Podcast
   btnurl: /subscribe
 
+notes:
+ text: Notes by Adam Dj Brett
+ url: "https://www.adamdjbrett.com"
+
+collections:
+  authors:
+    output: true
+
 subscribe:
   title: Subscribe
   btn: Subscribe →
@@ -46,6 +54,11 @@ defaults:
     values:
       sitemap:         false
       permalink: /:title/
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
   - scope:
       path: ""
       type: "posts"
