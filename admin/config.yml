@@ -137,6 +137,9 @@ collections:
         widget: string
       - label: Subtitle
         name: subtitle
+      - label: Authors
+        name: author
+        widget: string
         widget: text
       - label: Categories
         name: categories

@@ -61,3 +61,44 @@ We begin by acknowledging with respect the Onondaga Nation, Central Fire of the 
 Inspiration, code snippets, etc.
 * [Stackbit](https://www.stackbit.com/)
 * Creativitas
+
+## Change Log
+
++ Add Author Page.
++ Add Author Features.
++ Author Profile Detail.
+
+Add new author create new author file name on `_authors` folder, and name it with your author.
+example `adam.md`
+
+## Author frontmatter
+
+Use fontawesome icon just copy and paste example `fa-brands fa-github` in to icon section
+
+```
+---
+uid: adam
+title: Adam Dj Brett 
+description: "I’M A EDUCATOR, RESEARCHER, OPERATIONS MANAGER, AND A WEB DEVELOPER."
+image: "https://avatars.githubusercontent.com/u/22662978?v=4"
+social: 
+ - icon: fa-brands fa-github
+   title: Adam DJ Brett Github
+   url: https://github.com/adamdjbrett
+ - icon: fa-brands fa-twitter
+   title: Adam DJ brett Twitter
+   url: https://x.com/__adjb
+ - icon: fa-brands fa-instagram
+   title: Adam DJ brett Instagram
+   url: https://instagram.com/__adjb
+ - icon: fa-brands fa-linkedin
+   title: Adam DJ brett Linked
+   url: https://www.linkedin.com/in/adamdjbrett/
+---
+My article about me in here....
+```
+
+## Add author in to article
+
+To add author you can add `author: {{uid}}` check your author `uid` in the `_author/{{authorname}}` example `adam` so you can add author like this `author: adam`
+
