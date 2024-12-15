@@ -1,6 +1,6 @@
 ---
 uid: adam
-title: Adam Dj Brett 
+title: Adam DJ Brett 
 description: "I’M A EDUCATOR, RESEARCHER, OPERATIONS MANAGER, AND A WEB DEVELOPER."
 image: "https://avatars.githubusercontent.com/u/22662978?v=4"
 social: 
