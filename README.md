@@ -75,6 +75,9 @@ example `adam.md`
 
 Use fontawesome icon just copy and paste example `fa-brands fa-github` in to icon section
 
+## Change Note by on post
+Open `_config.yml` file and change `notes` area
+
 ```
 ---
 uid: adam
