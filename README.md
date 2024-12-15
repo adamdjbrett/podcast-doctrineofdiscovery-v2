@@ -32,17 +32,17 @@ This website uses the Podcaster theme originally developed by Stackbit but the t
 
 * very carefully.
 
-## Help
+### Help
 
 Proceed with caution. Unsupported repo.
 
-## Authors
+### Authors
 
 Contributors names and contact info
 * Stackbit for the original version
 * creativitas for porting in to Jekyll and keeping it alive.
 
-## Version History
+### Version History
 
 * 0.2
     * Jekyll transition
@@ -51,18 +51,19 @@ Contributors names and contact info
     * Initial Release 
     * [archived theme]*
 
-## License
+### License
 
-see the LICENSE.md file for details
+see the [LICENSE](LICENSE) file for details
 
-## Acknowledgments
+### Land Acknowledgments
 We begin by acknowledging with respect the Onondaga Nation, Central Fire of the Haudenosaunee Confederacy, on whose ancestral lands we now inhabit. Wherever you are located be aware of the Indigenous Peoples on whose lands you reside. We are mindful that the technology that makes this conference possible comes from the mineral extraction by multinational corporations, which decimate and displace Indigenous people and their land all over the world. May the information you glean from this podcast motivate you to uphold Indigenous values, protect Mother Earth, Honor Indian Treaties and hold your government and various institutions accountable who stand in the way.
 
+### Credits
 Inspiration, code snippets, etc.
 * [Stackbit](https://www.stackbit.com/)
 * Creativitas
 
-## Change Log
+## CHANGELOG
 
 + Add Author Page.
 + Add Author Features.
@@ -81,7 +82,7 @@ Open `_config.yml` file and change `notes` area
 ```
 ---
 uid: adam
-title: Adam Dj Brett 
+title: Adam DJ Brett 
 description: "I’M A EDUCATOR, RESEARCHER, OPERATIONS MANAGER, AND A WEB DEVELOPER."
 image: "https://avatars.githubusercontent.com/u/22662978?v=4"
 social: 
