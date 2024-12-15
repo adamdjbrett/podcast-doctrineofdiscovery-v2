@@ -14,8 +14,8 @@ header:
   btnurl: /subscribe
 
 notes:
- text: Notes by J Brett
- url: "https://www.adamdjbrett.com"
+ text: Notes by Adam DJ Brett
+ url: "/authors/adamdjbrett/"
 
 collections:
   authors:
@@ -59,7 +59,7 @@ defaults:
       type: "authors"
     values:
       layout: "author"
-      permalink: /authors/:uid/
+      permalink: /authors/:name
   - scope:
       path: ""
       type: "posts"
