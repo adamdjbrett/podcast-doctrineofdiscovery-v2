@@ -65,7 +65,6 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: adamdjbrett
       permalink: /:categories/:title/
   - scope:
       path: ""
