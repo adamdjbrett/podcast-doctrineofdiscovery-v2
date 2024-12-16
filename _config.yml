@@ -13,9 +13,9 @@ header:
   btn: Subscribe to Podcast
   btnurl: /subscribe
 
-notes:
- text: Notes by Adam DJ Brett
- url: "/authors/adamdjbrett/"
+#notes:
+# text: Notes by Adam DJ Brett
+# url: "/authors/adamdjbrett/"
 
 collections:
   authors:
