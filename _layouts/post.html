@@ -15,7 +15,7 @@
 Author: 
   {% assign author = site.authors | where: 'uid', page.author | first %}
   {% if author %}
-    <a href="{{ author.url }}" class="ms-1">{{ author.uid }}</a>
+    <a rel="author" href="{{ author.url }}" class="ms-1">{{ author.uid }}</a>
   {% endif %}
 </p>
 <p><small>  {% for category in page.categories %}
