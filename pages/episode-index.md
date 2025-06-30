@@ -48,6 +48,11 @@ sitemap:
 2. [S05E02: Exploring the Legacy of Vine Deloria Jr. on Native American Thought with Philip Deloria](https://podcast.doctrineofdiscovery.org/season5/episode-02/) 
 3. [S05E03: Reclaiming Faith: Dismantling white Christian Supremacy and Healing Through Indigenous Spirituality with Soulforce](https://podcast.doctrineofdiscovery.org/season5/episode-03/)
 4. [S05E04: Unveiling the Doctrine of Discovery: Historical Injustice and Pathways to Healing with Steven J. Schwartzberg](https://podcast.doctrineofdiscovery.org/season5/episode-04/)
+5. [S05E05: Reimagining Legal Frameworks: Protecting Native American Sacred Sites and Sovereignty](https://podcast.doctrineofdiscovery.org/season5/episode-05/)
+6. [S05E06: Rethinking Our Values: Indigenous Values for a Sustainable Future](https://podcast.doctrineofdiscovery.org/season5/episode-06/ )
+7. [S05E07: Indigenous Wisdom for Planetary Healing with Yuria Celidwen](https://podcast.doctrineofdiscovery.org/season5/episode-07/ )
+8. [S05E08: Teaching Uncomfortable History: The Doctrine of Discovery](https://podcast.doctrineofdiscovery.org/season5/episode-08/ )
+
 
 ## [Special Season Doctrine of Christian Discovery](https://megaphone.link/AOOOI9257433215)
 *Produced by Good Faith Media*
