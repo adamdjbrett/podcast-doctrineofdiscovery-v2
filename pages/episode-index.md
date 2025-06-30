@@ -53,6 +53,9 @@ sitemap:
 7. [S05E07: Indigenous Wisdom for Planetary Healing with Yuria Celidwen](https://podcast.doctrineofdiscovery.org/season5/episode-07/ )
 8. [S05E08: Teaching Uncomfortable History: The Doctrine of Discovery](https://podcast.doctrineofdiscovery.org/season5/episode-08/ )
 
+### Season 6
+1. [S06E01: Defending Mother Earth from The Doctrine of Christian Discovery #NoKings](https://podcast.doctrineofdiscovery.org/season6/episode-01/)
+
 
 ## [Special Season Doctrine of Christian Discovery](https://megaphone.link/AOOOI9257433215)
 *Produced by Good Faith Media*
