@@ -11,7 +11,7 @@ header:
   description: Presented by the Indigenous Values Initiative.
   content: Helping listeners contextualize the Doctrine of Discovery.
   btn: Subscribe to Podcast
-  btnurl: /subscribe
+  btnurl: /subscribe/
 
 #notes:
 # text: Notes by Adam DJ Brett
@@ -24,12 +24,12 @@ collections:
 subscribe:
   title: Subscribe
   btn: Subscribe →
-  link: /subscribe
+  link: /subscribe/
 
 podcast :
   title: Latest Episodes
   btn: Explore All
-  url: /episodes
+  url: /episodes/
   background: /assets/images/pattern.svg
 
 patner:
@@ -48,24 +48,32 @@ social:
   youtube: https://youtube.com/c/IndigenousValuesInitiative
 
 
+
 defaults:
+  # Tidak perlu set permalink di pages secara global!
   - scope:
-      path:            pages/**/*.md
+      path: "pages"
     values:
-      sitemap:         false
-      permalink: /:title/
+      sitemap: false
+
+  # Authors collection (boleh pakai slug atau name, asalkan nilainya aman di masing-masing file)
   - scope:
       path: ""
       type: "authors"
     values:
       layout: "author"
-      permalink: /authors/:name
+      # Hanya gunakan slug atau name jika sudah didefinisikan dan aman, lengkapi dengan /
+      permalink: /authors/:name/
+
+  # Posts collection: boleh pakai categories dan title
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
       permalink: /:categories/:title/
+
+  # Default layout untuk halaman lainnya
   - scope:
       path: ""
     values:
