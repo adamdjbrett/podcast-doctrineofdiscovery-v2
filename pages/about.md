@@ -19,6 +19,9 @@ Following 15<sup>th</sup> century Christian imperialism, through to the 19<sup>t
 
 The goal of this Podcast is to help identify these systems of domination that have been sustained by greed and power, through the subjugation of human beings and the natural world.
 
+## Praise for the Podcast
+> Mapping the Doctrine of Discovery podcast has helped me understand the history, laws, and nuances involved in federal Indian law. The content as a whole offered a graduate course of study in comprehending the Doctrine of Discovery. This free offering is a great gift to the public. The hosts, guest speakers, and editing were of the highest quality. As a professor, I shared multiple episodes in my undergraduate classes to demonstrate the complexities and tensions involved in Christian theology and doctrine, and how they manifest as environmental crises. ~ Kimberly Carfore, University of San Francisco. 
+
 ## Metadata & Citation Library
 * [Mapping the Dcotrine of Discovery Zotero Library](https://www.zotero.org/groups/5628442/mapping_the_doctrine_of_discovery)
 * [The Doctrine of Christian Discovery Podcast Zotero Library](https://www.zotero.org/groups/5628453/doctrine_of_christian_discovery_podcast)
