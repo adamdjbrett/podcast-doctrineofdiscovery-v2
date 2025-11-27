@@ -90,6 +90,10 @@ plugins:
   - jekyll-include-cache
   - jekyll-minifier
 
+# Keep citation files when building
+keep_files:
+  - assets/citations
+
 
 paginate: 6
 paginate_path: "/episodes/page:num/"
