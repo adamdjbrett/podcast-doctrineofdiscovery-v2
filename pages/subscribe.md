@@ -8,7 +8,7 @@ shop:
    link: https://www.radio.net/podcast/mapping-the-doctrine-of-discovery
  - title: Podtail
    icon: /assets/images/icon/podtail.svg
-   link: https://doctrineofdiscovery.org/podtail/
+   link: https://doctrineofdiscovery.org/s/podtail/
  - title: Podbay
    icon: /assets/images/icon/podbay.svg
    link: https://doctrineofdiscovery.org/s/podbay
