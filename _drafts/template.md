@@ -19,3 +19,6 @@ image_alt: mapping the Doctrine of Discovery cover photo.
 [⤓ Download a transcript of the Episode as a PDF](/assets/pdfs/) // [→ Subscribe](/subscribe/)
   
 ## Introduction
+
+
+{% include citation-links.html %}
