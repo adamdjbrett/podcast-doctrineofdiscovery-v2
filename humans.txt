@@ -8,7 +8,16 @@
     Philip P. Arnold –– Indigenous Values Initiative –– @indivenousVI
     Sandra Bigree –– Indigenous Values Initiative –– @indivenousVI
 
+# Contributors
+
+{% if site.github.contributors %}
+{% for contributor in site.github.contributors %}
+    {{ contributor.login }} –– {{ contributor.contributions }} contributions
+{% endfor %}
+{% endif %}
+
 # Developers
+    Crow Ricahrdson (HTML/CSS/JS Updates)
     Vidhya Venkatesan (code fixes for NEXT.JS version)
     vosaul (code fixes for NEXT.JS version)
     leno4ka94 (code fixes for NEXT.JS version)
