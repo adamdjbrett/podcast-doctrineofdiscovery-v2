@@ -1,0 +1,69 @@
+name: Deploy Jekyll to XMIT
+
+on:
+  push:
+    branches: ["main", "master"]
+  workflow_dispatch:
+    inputs:
+      site:
+        description: "XMIT site/domain (example: podcast.doctrineofdiscovery.org)"
+        required: false
+        type: string
+
+concurrency:
+  group: deploy-xmit-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      JEKYLL_ENV: production
+      XMIT_SITE: podcast.doctrineofdiscovery.org@296
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --trace
+
+      - name: Verify build output
+        run: |
+          if [ ! -d _site ]; then
+            echo "_site directory missing after build" >&2
+            exit 1
+          fi
+          ls -lah _site | head -n 20
+
+      - name: Deploy to XMIT (CLI)
+        env:
+          XMIT_KEY: ${{ secrets.XMIT_KEY }}
+        run: |
+          if [ -z "$XMIT_KEY" ]; then
+            echo "XMIT_KEY secret is not set" >&2
+            exit 1
+          fi
+          SITE_INPUT="${{ github.event_name == 'workflow_dispatch' && inputs.site || '' }}"
+          if [ -n "$SITE_INPUT" ]; then
+            export XMIT_SITE="$SITE_INPUT"
+          fi
+          if [ -z "$XMIT_SITE" ]; then
+            echo "XMIT site/domain not provided. Define repo variable XMIT_SITE or pass the site input." >&2
+            exit 1
+          fi
+          echo "Deploying _site to $XMIT_SITE via XMIT CLI"
+          npx -y @xmit.co/xmit "$XMIT_SITE" _site || { echo "XMIT deploy failed" >&2; exit 1; }
+
+      - name: Post-deploy summary
+        run: |
+          echo "Deployment attempt finished for $XMIT_SITE"
+          echo "Visit: https://$XMIT_SITE"
