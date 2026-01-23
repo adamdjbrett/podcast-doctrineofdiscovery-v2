@@ -1,5 +1,7 @@
 [![Deploy Jekyll to XMIT](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/xmit-deploy.yml/badge.svg?branch=main)](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/xmit-deploy.yml)
 
+[![hosted on xmit.co](xmit.gif)](https://xmit.co)
+
 # Mapping the Doctrine of Discovery Podcast
 The official repository for our Podcast
 [Listen Now](https://podcast.doctrineofdiscovery.org/)
