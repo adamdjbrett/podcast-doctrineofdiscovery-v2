@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/18a5c789-268f-43cf-b4b9-f61aab5944db/deploy-status)](https://app.netlify.com/sites/podcast-doctrineofdiscovery/deploys)
+[![Deploy Jekyll to XMIT](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/xmit-deploy.yml/badge.svg?branch=main)](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/xmit-deploy.yml)
 
 # Mapping the Doctrine of Discovery Podcast
 The official repository for our Podcast
@@ -105,4 +105,5 @@ My article about me in here....
 ## Add author in to article
 
 To add author you can add `author: {{uid}}` check your author `uid` in the `_author/{{authorname}}` example `adam` so you can add author like this `author: adam`
+
 
