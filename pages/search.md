@@ -2,7 +2,7 @@
 layout: search
 title: Search
 description: Search our podcast
-permalink: /Search/
+permalink: /search/
 sitemap:
   exclude: "no"
 ---
