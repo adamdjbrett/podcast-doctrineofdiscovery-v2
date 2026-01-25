@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: search
 title: Search
 description: Search our podcast
 permalink: /Search/

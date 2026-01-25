@@ -1,0 +1,106 @@
+{%- include head.html -%}
+{%- include widget/navbar.html -%}
+
+<div class="container">
+<div class="row">
+<div class="col-md-10 offset-md-1 p-3 p-md-5">
+<h1><strong>{{page.title}}</strong></h1>
+<p class="text-white">{{page.description}}</p>
+
+{{content}}
+
+</div>
+</div>
+</div>
+
+{%- include footer.html -%}
+
+<style>
+  #lunrsearchresults {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  #lunrsearchresults p {
+    color: #fff;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  #lunrsearchresults ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .lunrsearchresult {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #d9230f;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .lunrsearchresult:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .lunrsearchresult a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .lunrsearchresult a:hover {
+    text-decoration: none;
+  }
+  
+  .lunrsearchresult .title {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .lunrsearchresult .title:hover {
+    color: #d9230f;
+  }
+  
+  .lunrsearchresult .body {
+    color: #ccc;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+  
+  .lunrsearchresult .url {
+    color: #888;
+    font-size: 0.85rem;
+  }
+  
+  #lunrsearch {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  #lunrsearch:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(217, 35, 15, 0.2);
+  }
+  
+  #lunrsearch::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .lunrsearch-form {
+    margin-bottom: 2rem;
+  }
+</style>
