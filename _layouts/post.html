@@ -37,8 +37,10 @@ Author:
 
 <span>
   {% for tag in page.tags %}
-    {% capture tag_name %}{{ tag }}{% endcapture %}
-    <a href="{{site.baseurl}}/tag.html#{{tag}}"><code><nobr>#{{ tag_name }}</nobr></code>&nbsp;</a>
+    {% assign tag_slug = tag | slugify | downcase %}
+    {% assign tag_words = tag | replace: '-', ' ' | split: ' ' %}
+    {% capture tag_label %}{% for word in tag_words %}{{ word | downcase | capitalize }}{% unless forloop.last %} {% endunless %}{% endfor %}{% endcapture %}
+    <a href="{{site.baseurl}}/tag.html#{{ tag_slug }}"><code><nobr>#{{ tag_label | strip }}</nobr></code>&nbsp;</a>
   {% endfor %}
 </span>
 </small>

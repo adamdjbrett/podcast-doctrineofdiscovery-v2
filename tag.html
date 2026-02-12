@@ -12,13 +12,19 @@ description : Hastag Podcast
   <div class="row mt-5">
 <!--  cycles through tag list and creates header row of all tags used in site with accompanying per-tag counts...-->
   {% for this_word in tag_words %}
-    <div class="col-md-3 p-3"><a href="#{{ this_word | cgi_escape }}" class="btn-orange">{{ this_word }} <span class="orange">({{ site.tags[this_word].size }})</span></a></div>
+    {% assign tag_slug = this_word | slugify | downcase %}
+    {% assign tag_words_display = this_word | replace: '-', ' ' | split: ' ' %}
+    {% capture tag_label %}{% for word in tag_words_display %}{{ word | downcase | capitalize }}{% unless forloop.last %} {% endunless %}{% endfor %}{% endcapture %}
+    <div class="col-md-3 p-3"><a href="#{{ tag_slug }}" class="btn-orange">{{ tag_label | strip }} <span class="orange">({{ site.tags[this_word].size }})</span></a></div>
   {% endfor %}
   </div>
 <!--cycles through tag list and creates subheader for each tag name...-->
 <div class="container">
   {% for this_word in tag_words %}
-  <h3 id="{{ this_word | cgi_escape }}">{{ this_word }}</h3>
+  {% assign tag_slug = this_word | slugify | downcase %}
+  {% assign tag_words_display = this_word | replace: '-', ' ' | split: ' ' %}
+  {% capture tag_label %}{% for word in tag_words_display %}{{ word | downcase | capitalize }}{% unless forloop.last %} {% endunless %}{% endfor %}{% endcapture %}
+  <h3 id="{{ tag_slug }}">{{ tag_label | strip }}</h3>
 <!--  lists all posts corresponding to specific tag...-->
 
 <div class="row mb-5">
