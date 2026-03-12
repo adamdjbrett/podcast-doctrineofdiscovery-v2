@@ -10,6 +10,7 @@ module Jekyll
     SOURCE_FEED_URL = "https://feeds.buzzsprout.com/1926214.rss"
     OUTPUT_FILENAME = "podcast.xml"
     ITEM_IMAGE_PATH = "/assets/img/mapping-doctrine-of-discovery-favicon.png"
+    XSL_HREF_PATH = "/assets/xsl/podcast-feed.xsl"
 
     def self.site_url(site)
       (site.config["url"] || "").to_s.sub(%r{/\z}, "")
@@ -91,6 +92,16 @@ module Jekyll
       if lines[0]&.lstrip&.start_with?("<?xml") && lines[1]&.lstrip&.start_with?("<?xml")
         lines.delete_at(1)
         body = lines.join
+      end
+      body = body.gsub(/^\s*<\?xml-stylesheet .*?\?>\s*\n?/m, "")
+
+      if body.lstrip.start_with?("<?xml")
+        body = body.sub(
+          /\A(<\?xml[^>]*\?>\s*\n?)/,
+          "\\1<?xml-stylesheet href=\"#{XSL_HREF_PATH}\" type=\"text/xsl\"?>\n"
+        )
+      else
+        body = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet href=\"#{XSL_HREF_PATH}\" type=\"text/xsl\"?>\n#{body}"
       end
       body << "\n"
       File.write(output_path, body)
