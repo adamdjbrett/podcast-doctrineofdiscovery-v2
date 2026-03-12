@@ -14,7 +14,8 @@
           body {
             background: #000;
             color: #fff;
-            font-family: "Courier New", Courier, monospace;
+            font-family: system-ui, sans-serif;
+            font-weight: 300;
             margin: 0;
             padding: 2rem;
             line-height: 1.5;
@@ -25,6 +26,15 @@
           .item { margin-bottom: 1.75rem; border-bottom: 1px solid #222; padding-bottom: 1rem; }
           h1, h2 { margin: 0 0 0.5rem 0; font-weight: 700; }
           p { margin: 0.35rem 0; }
+          .channel-image,
+          .episode-image {
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            margin: 0.75rem 0 1rem 0;
+            border: 1px solid #333;
+          }
         </style>
       </head>
       <body>
@@ -32,6 +42,9 @@
           <div class="meta">
             <h1><xsl:value-of select="/rss/channel/title" /></h1>
             <p><xsl:value-of select="/rss/channel/description" /></p>
+            <xsl:if test="/rss/channel/image/url">
+              <img class="channel-image" src="{/rss/channel/image/url}" alt="{/rss/channel/title}" />
+            </xsl:if>
             <p>
               <a href="{/rss/channel/link}">
                 <xsl:value-of select="/rss/channel/link" />
@@ -42,6 +55,14 @@
           <xsl:for-each select="/rss/channel/item">
             <div class="item">
               <h2><xsl:value-of select="title" /></h2>
+              <xsl:choose>
+                <xsl:when test="itunes:image/@href">
+                  <img class="episode-image" src="{itunes:image/@href}" alt="{title}" />
+                </xsl:when>
+                <xsl:when test="image/url">
+                  <img class="episode-image" src="{image/url}" alt="{title}" />
+                </xsl:when>
+              </xsl:choose>
               <p><strong>Date:</strong> <xsl:value-of select="pubDate" /></p>
               <xsl:if test="link">
                 <p>
