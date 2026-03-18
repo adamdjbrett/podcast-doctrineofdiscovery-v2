@@ -1,0 +1,17 @@
+{
+  "name": "podcast-doctrineofdiscovery-v2",
+  "version": "1.0.0",
+  "description": "[![Deploy Jekyll to XMIT](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/xmit-deploy.yml/badge.svg?branch=main)](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/xmit-deploy.yml)",
+  "main": "index.js",
+  "scripts": {
+    "build": "bundle exec jekyll build",
+    "deploy": "npm run build && npx wrangler deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "wrangler": "4.75.0"
+  }
+}
