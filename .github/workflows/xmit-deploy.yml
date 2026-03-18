@@ -61,7 +61,24 @@ jobs:
             exit 1
           fi
           echo "Deploying _site to $XMIT_SITE via XMIT CLI"
-          npx -y @xmit.co/xmit "$XMIT_SITE" _site || { echo "XMIT deploy failed" >&2; exit 1; }
+          max_attempts=3
+          attempt=1
+          while [ $attempt -le $max_attempts ]; do
+            echo "Deploy attempt $attempt of $max_attempts"
+            if npx -y @xmit.co/xmit "$XMIT_SITE" _site; then
+              echo "Deploy succeeded on attempt $attempt"
+              exit 0
+            fi
+            echo "Attempt $attempt failed"
+            if [ $attempt -lt $max_attempts ]; then
+              sleep_time=$((attempt * 15))
+              echo "Retrying in ${sleep_time}s..."
+              sleep $sleep_time
+            fi
+            attempt=$((attempt + 1))
+          done
+          echo "XMIT deploy failed after $max_attempts attempts" >&2
+          exit 1
 
       - name: Post-deploy summary
         run: |
