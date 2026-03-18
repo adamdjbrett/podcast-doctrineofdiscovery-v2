@@ -27,6 +27,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Ignore Gemfile.lock
+        run: rm -f Gemfile.lock
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
