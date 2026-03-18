@@ -28,6 +28,11 @@ jobs:
           ruby-version: '3.3'
           bundler-cache: true
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
       - name: Build Jekyll site
         run: bundle exec jekyll build --trace
 
