@@ -4,6 +4,17 @@ cover: /assets/images/mapping-doctrine-of-discovery-favicon.webp
 logo: /assets/images/dod-podcast-logo.svg
 url: https://podcast.doctrineofdiscovery.org
 
+exclude:
+  - vendor/
+  - node_modules/
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - wrangler.toml
+  - README.md
+  - scripts/
+
 header:
   background: /assets/images/hero-background.webp
   cover: /assets/images/mapping-doctrine-of-discovery-favicon.webp
