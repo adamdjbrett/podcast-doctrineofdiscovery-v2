@@ -1,23 +1,24 @@
+---
+permalink: /humans.txt
+layout: null
+---
 # humanstxt.org/
 # The humans responsible & technology colophon
 
 # TEAM
 
-    Adam DJ Brett –– Web Developer –– @__adjb
-    Indigenous Values Initiative –– Fiscal Sponsor –– @indivenousVI
-    Philip P. Arnold –– Indigenous Values Initiative –– @indivenousVI
-    Sandra Bigree –– Indigenous Values Initiative –– @indivenousVI
+    Adam DJ Brett -- Web Developer -- @__adjb
+    Indigenous Values Initiative -- Fiscal Sponsor -- @indigenousVI
+    Philip P. Arnold -- Indigenous Values Initiative -- @indigenousVI
+    Sandy Bigtree -- Indigenous Values Initiative -- @indigenousVI
 
 # Contributors
 
-{% if site.github.contributors %}
-{% for contributor in site.github.contributors %}
-    {{ contributor.login }} –– {{ contributor.contributions }} contributions
-{% endfor %}
-{% endif %}
+    Jordan Loewen-Colon -- Producer
+    Adam DJ Brett -- Producer / Web Developer
 
 # Developers
-    Crow Ricahrdson (HTML/CSS/JS Updates)
+    Crow Richardson (HTML/CSS/JS Updates)
     Vidhya Venkatesan (code fixes for NEXT.JS version)
     vosaul (code fixes for NEXT.JS version)
     leno4ka94 (code fixes for NEXT.JS version)
@@ -31,5 +32,5 @@
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5, Font Awesome, Formspree, Jekyll, Markdown
-    Netlify, jQuery, Modernizr, Normalize.css
+    CSS3, HTML5, Jekyll, Liquid, Ruby, Markdown
+    Cloudflare, Bootstrap, Font Awesome
