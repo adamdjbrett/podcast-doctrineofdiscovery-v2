@@ -22,6 +22,23 @@ The goal of this Podcast is to help identify these systems of domination that ha
 ## Praise for the Podcast
 > Mapping the Doctrine of Discovery podcast has helped me understand the history, laws, and nuances involved in federal Indian law. The content as a whole offered a graduate course of study in comprehending the Doctrine of Discovery. This free offering is a great gift to the public. The hosts, guest speakers, and editing were of the highest quality. As a professor, I shared multiple episodes in my undergraduate classes to demonstrate the complexities and tensions involved in Christian theology and doctrine, and how they manifest as environmental crises. ~ Kimberly Carfore, University of San Francisco. 
 
+## Badges
+<div style="display: flex; flex-direction: column; align-items: center;"> <a href="https://goodpods.com/leaderboard/top-100-shows-by-category/other/indigenous?indie=false&period=alltime#91361633" target="_blank"> <img src="https://storage.googleapis.com/goodpods-images-bucket/leaderboard_badges/overall_top5.png" alt="goodpods top 100 indigenous podcasts" style="width: 250px; height: 77px;" /> </a> <a href="https://goodpods.com/leaderboard/top-100-shows-by-category/other/indigenous" style="text-decoration: none; color: #6F6F6F; font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align: center; line-height: 16px; margin-top: 4px;" target="_blank"> Goodpods Top 100 Indigenous Podcasts </a> <a href="https://goodpods.com/podcasts/mapping-the-doctrine-of-discovery-198087" style="text-decoration: none; color: #6F6F6F; font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align: center; line-height: 16px; margin-top: 4px;" target="_blank"> Listen now to Mapping the Doctrine of Discovery podcast </a> </div>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<a href="https://goodpods.com/leaderboard/top-100-shows-by-category/business/law?indie=false&period=alltime#91367083" target="_blank">
+<img src="https://storage.googleapis.com/goodpods-images-bucket/leaderboard_badges/business_law_top50.png" alt="goodpods top 100 law podcasts" style="width: 250px; height: 77px;" />
+</a>
+<a href="https://goodpods.com/leaderboard/top-100-shows-by-category/business/law" style="text-decoration: none; color: #6F6F6F; font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align: center; line-height: 16px; margin-top: 4px;" target="_blank">
+Goodpods Top 100 Law Podcasts
+</a>
+<a href="https://goodpods.com/podcasts/mapping-the-doctrine-of-discovery-198087" style="text-decoration: none; color: #6F6F6F; font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align: center; line-height: 16px; margin-top: 4px;" target="_blank">
+Listen now to Mapping the Doctrine of Discovery podcast
+</a>
+</div>
+
+
+
 ## Metadata & Citation Library
 * [The Doctrine of Christian Discovery Podcast Zotero Library](https://www.zotero.org/groups/5628442/mapping_the_doctrine_of_discovery)
 * [The Doctrine of Christian Discovery Podcast Zotero Library](https://www.zotero.org/groups/5628453/doctrine_of_christian_discovery_podcast)
