@@ -197,8 +197,8 @@ DEPENDENCIES
   jekyll-seo-tag
   jekyll-sitemap
   jekyll-tagging
-  wdm (~> 0.1.0)
-  webrick (~> 1.7)
+  wdm (~> 0.1.1)
+  webrick (~> 1.8)
 
 BUNDLED WITH
    2.7.2
