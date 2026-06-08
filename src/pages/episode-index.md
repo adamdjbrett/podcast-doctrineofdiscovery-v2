@@ -55,6 +55,17 @@ sitemap:
 
 ### Season 6
 1. [S06E01: Defending Mother Earth from The Doctrine of Christian Discovery #NoKings](https://podcast.doctrineofdiscovery.org/season6/episode-01/)
+2. [S6E02: A Theologian Confronts the Doctrine of Discovery and Calls for Institutional Repair](https://podcast.doctrineofdiscovery.org/season6/episode-02/)
+3. [S06E03: How Rethinking God, Gender, And Nature Can Heal A Burning World](https://podcast.doctrineofdiscovery.org/season6/episode-03/)
+4. [S06E04: Washington Said Burn The Corn and New Yorkers Brought Surveyors](https://podcast.doctrineofdiscovery.org/season6/episode-04/)
+5. [S06E05: The Sloan Lecture - The Oneidas, the Best Land, and the Erie Canal - By Susan Brewer](https://podcast.doctrineofdiscovery.org/season6/episode-05/)
+6. [S06E06: Sacred Waters: Trauma of the Erie Canal](https://podcast.doctrineofdiscovery.org/season6/episode-06/)
+7. [S06E07: Inside The Seven Mountains Mandate And The Rise Of Turning Point USA](https://podcast.doctrineofdiscovery.org/season6/episode-07/)
+8. [S06E08: Remembering The Teacher: Charles H. Long (Part 1)](https://podcast.doctrineofdiscovery.org/season6/episode-08/)
+9. [S06E09: The Legacy of Charles H. Long Part 2: How & Why White Supremacy Persists](https://podcast.doctrineofdiscovery.org/season6/episode-09/)
+10. [S06E10: How Colonial Law Shaped Modern Data Extraction](https://podcast.doctrineofdiscovery.org/season6/episode-10/)
+11. [S06E11: What Changes When Earth Is Your Mother](https://podcast.doctrineofdiscovery.org/season6/episode-11/)
+12. [S06E12: How the Revolutionary War Reshaped Haudenosaunee Governance](https://podcast.doctrineofdiscovery.org/season6/episode-12/)
 
 
 ## [Special Season Doctrine of Christian Discovery](https://megaphone.link/AOOOI9257433215)
