@@ -1,5 +1,6 @@
 const MarkdownIt = require("markdown-it");
 const { buildSiteData } = require("./scripts/site-data.cjs");
+const packageJson = require("./package.json");
 
 const md = new MarkdownIt({ html: true, linkify: false, typographer: false });
 const siteData = buildSiteData();
@@ -63,6 +64,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ LICENSE: "license/LICENSE" });
 
   eleventyConfig.addGlobalData("site", () => siteData);
+  eleventyConfig.addGlobalData("eleventyVersion", () => packageJson.devDependencies["@11ty/eleventy"].replace(/^[^\d]*/, ""));
   eleventyConfig.addGlobalData("eleventyComputed", {
     previous: (data) => {
       const postIndex = siteData.posts.findIndex((post) => post.url === data.page?.url);

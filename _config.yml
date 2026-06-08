@@ -30,8 +30,8 @@ patner:
   
 footer:
   logo: /assets/images/blue-olive.svg
-  copyright1: This podcast is licensed under the Creative Commons by the Indigenous Values Initiative.
-  copyright2: This site was created with Stackbit and is maintained by Adam DJ Brett.
+  copyright1: This podcast is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/deed.en">Creative Commons</a> by the <a href="https://indigenousvalues.org">Indigenous Values Initiative</a>.
+  copyright2: This site was created with Stackbit and is maintained by <a href="https://adamdjbrett.com">Adam DJ Brett</a>.
 
 social: 
   facebook: https://www.facebook.com/doctrineofdiscovery
