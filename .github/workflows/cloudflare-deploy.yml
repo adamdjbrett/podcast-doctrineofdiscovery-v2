@@ -1,4 +1,4 @@
-name: Deploy Jekyll to Cloudflare Workers
+name: Deploy 11ty to Cloudflare Workers
 
 on:
   push:
@@ -16,25 +16,21 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      JEKYLL_ENV: production
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-          bundler-cache: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: npm
 
-      - name: Build Jekyll site
-        run: bundle exec jekyll build --trace
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build 11ty site
+        run: npm run build
 
       - name: Verify build output
         run: |

@@ -1,10 +1,10 @@
 {
   "name": "podcast-doctrineofdiscovery-v2",
   "version": "1.0.0",
-  "description": "[![Deploy Jekyll to XMIT](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/xmit-deploy.yml/badge.svg?branch=main)](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/xmit-deploy.yml)",
+  "description": "11ty site for the Mapping the Doctrine of Discovery Podcast.",
   "main": "index.js",
   "scripts": {
-    "build": "bundle exec jekyll build",
+    "build": "rm -rf _site && eleventy && node scripts/postbuild-citations.mjs && node scripts/postbuild-podcast-feed.mjs",
     "deploy": "npm run build && npx wrangler deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +12,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "wrangler": "4.75.0"
+    "@11ty/eleventy": "3.1.6",
+    "js-yaml": "4.2.0",
+    "liquidjs": "10.27.0",
+    "markdown-it": "14.2.0",
+    "wrangler": "4.98.0"
   }
 }

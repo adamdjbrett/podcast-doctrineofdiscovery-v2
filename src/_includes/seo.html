@@ -1,0 +1,9 @@
+<meta name="generator" content="Eleventy">
+<meta property="og:title" content="{% if title %}{{ title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="{% if description %}{{ description | escape }}{% else %}{{ site.description | escape }}{% endif %}">
+<meta property="og:description" content="{% if description %}{{ description | escape }}{% else %}{{ site.description | escape }}{% endif %}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:type" content="{% if layout == 'post' %}article{% else %}website{% endif %}">

@@ -1,0 +1,21 @@
+---
+layout: null
+pagination:
+  data: site.redirectList
+  size: 1
+  alias: redirect
+permalink: "{{ redirect.output }}"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <link rel="canonical" href="{{ redirect.to }}">
+  <meta http-equiv="refresh" content="0; url={{ redirect.to }}">
+</head>
+<body>
+  <p>Redirecting to <a href="{{ redirect.to }}">{{ redirect.to }}</a></p>
+</body>
+</html>
