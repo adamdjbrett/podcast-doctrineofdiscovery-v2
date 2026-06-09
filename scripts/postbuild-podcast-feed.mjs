@@ -10,6 +10,8 @@ const SITE_URL = "https://podcast.doctrineofdiscovery.org";
 const OUTPUT_FILENAME = "podcast.xml";
 const ITEM_IMAGE_URL = `${SITE_URL}/assets/img/mapping-doctrine-of-discovery-favicon.png`;
 const XSL_HREF_PATH = "/assets/xsl/podcast-feed.xsl";
+const CACHE_DIR = path.join(ROOT, "scripts", "cache");
+const CACHE_FILE = path.join(CACHE_DIR, "buzzsprout-feed.xml");
 
 async function fetchFeed(url, redirects = 5) {
   if (redirects <= 0) {
@@ -72,7 +74,18 @@ function transformFeed(xml) {
   return `${output.trim()}\n`;
 }
 
-const sourceXml = await fetchFeed(SOURCE_FEED_URL);
+let sourceXml;
+try {
+  sourceXml = await fetchFeed(SOURCE_FEED_URL);
+  fs.mkdirSync(CACHE_DIR, { recursive: true });
+  fs.writeFileSync(CACHE_FILE, sourceXml);
+} catch (error) {
+  if (!fs.existsSync(CACHE_FILE)) {
+    throw error;
+  }
+  console.warn(`Using cached podcast feed after fetch failed: ${error.message}`);
+  sourceXml = fs.readFileSync(CACHE_FILE, "utf8");
+}
 const output = transformFeed(sourceXml);
 fs.writeFileSync(path.join(ROOT, "_site", OUTPUT_FILENAME), output);
 console.log(`Generated ${OUTPUT_FILENAME} from ${SOURCE_FEED_URL}`);

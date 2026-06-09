@@ -15,21 +15,38 @@ This site is built with Eleventy and Liquid templates.
 ```sh
 npm install
 npm run build
+npm test
 ```
 
-The build writes to `_site/`. The build also generates citation downloads and `podcast.xml` after Eleventy finishes.
+The build writes to `_site/`. The build also generates citation downloads and `podcast.xml` after Eleventy finishes. `podcast.xml` is built from Buzzsprout when the network is available and falls back to `scripts/cache/buzzsprout-feed.xml` for offline or restricted builds.
+
+`npm test` runs the production build plus checks for required pages, feeds, referenced assets, and internal links.
 
 ## Source Layout
 
 - `src/` contains Eleventy pages, layouts, includes, and data.
-- `src/content/_posts/` contains podcast episode posts.
-- `src/content/_authors/` contains author profiles.
+- `src/_config/` contains Eleventy config modules for filters, collections, global data, Markdown setup, URL helpers, and passthrough copy.
+- `src/common/` contains generated common outputs such as feeds, sitemap, robots, redirects, and humans.txt.
+- `src/content/episodes/` contains podcast episode posts.
+- `src/content/authors/` contains author profiles.
+- `src/_data/site.yml` contains site metadata that used to live in the legacy root `_config.yml`.
 - `public/` contains static files copied to the site root, including `/assets/...`.
-- `scripts/` contains Node postbuild helpers for citation files, redirects, and the podcast feed.
+- `scripts/` contains Node build helpers and verification checks.
+
+## Checks
+
+```sh
+npm run check:build
+npm run check:feeds
+npm run check:assets
+npm run check:links
+```
+
+The asset check reports large public files for review. It currently flags `public/assets/pdfs/Episode-05-Doctrine-of-Discovery-Abya-Yala-Tupac-Enrique-Acosta.pdf` as the largest reviewed file.
 
 ## Deployment
 
-GitHub Actions build the site with `npm run build` and deploy the generated `_site/` directory to Cloudflare Workers and XMIT.
+GitHub Actions build and verify the site with `npm test`, then deploy the generated `_site/` directory to Cloudflare Workers and XMIT.
 
 ## Notes
 

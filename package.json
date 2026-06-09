@@ -4,9 +4,15 @@
   "description": "11ty site for the Mapping the Doctrine of Discovery Podcast.",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf _site && eleventy && node scripts/postbuild-citations.mjs && node scripts/postbuild-podcast-feed.mjs",
+    "clean": "rm -rf _site",
+    "build": "npm run clean && eleventy && npm run generate:postbuild",
+    "generate:postbuild": "node scripts/postbuild-citations.mjs && node scripts/postbuild-podcast-feed.mjs",
+    "check:assets": "node scripts/check-assets.mjs",
+    "check:build": "node scripts/check-build-output.mjs",
+    "check:feeds": "node scripts/check-feeds.mjs",
+    "check:links": "node scripts/check-links.mjs",
     "deploy": "npm run build && npx wrangler deploy",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run build && npm run check:build && npm run check:feeds && npm run check:assets && npm run check:links"
   },
   "keywords": [],
   "author": "",

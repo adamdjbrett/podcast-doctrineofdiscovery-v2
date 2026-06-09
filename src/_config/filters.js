@@ -1,9 +1,4 @@
-const MarkdownIt = require("markdown-it");
-const { buildSiteData } = require("./scripts/site-data.cjs");
-const packageJson = require("./package.json");
-
-const md = new MarkdownIt({ html: true, linkify: false, typographer: false });
-const siteData = buildSiteData();
+const { absoluteUrl, relativeUrl } = require("./urls.js");
 
 function normalizeDate(value) {
   if (value instanceof Date) {
@@ -38,45 +33,7 @@ function slugify(value) {
     .replace(/^-+|-+$/g, "");
 }
 
-function relativeUrl(value) {
-  const baseurl = siteData.baseurl || "";
-  const url = String(value || "");
-  if (!url || /^([a-z]+:)?\/\//i.test(url) || url.startsWith("#")) {
-    return url;
-  }
-  return `${baseurl}${url.startsWith("/") ? "" : "/"}${url}`;
-}
-
-function absoluteUrl(value) {
-  const url = String(value || "");
-  if (/^([a-z]+:)?\/\//i.test(url)) {
-    return url;
-  }
-  return `${siteData.url}${relativeUrl(url)}`;
-}
-
-module.exports = function (eleventyConfig) {
-  eleventyConfig.setLibrary("md", md);
-
-  eleventyConfig.addPassthroughCopy({ public: "." });
-  eleventyConfig.addPassthroughCopy("add-related-episodes.py");
-  eleventyConfig.addPassthroughCopy("add-related-episodes.sh");
-  eleventyConfig.addPassthroughCopy({ LICENSE: "license/LICENSE" });
-
-  eleventyConfig.addGlobalData("site", () => siteData);
-  eleventyConfig.addGlobalData("eleventyVersion", () => packageJson.devDependencies["@11ty/eleventy"].replace(/^[^\d]*/, ""));
-  eleventyConfig.addGlobalData("eleventyComputed", {
-    previous: (data) => {
-      const postIndex = siteData.posts.findIndex((post) => post.url === data.page?.url);
-      return postIndex >= 0 ? siteData.posts[postIndex + 1] || {} : {};
-    },
-    next: (data) => {
-      const postIndex = siteData.posts.findIndex((post) => post.url === data.page?.url);
-      return postIndex > 0 ? siteData.posts[postIndex - 1] || {} : {};
-    },
-    fileSlug: (data) => data.page?.fileSlug || data.slug,
-  });
-
+function registerFilters(eleventyConfig, { md, siteData }) {
   eleventyConfig.addFilter("date_to_string", (value) => {
     const date = normalizeDate(value);
     return `${pad(date.getUTCDate())} ${date.toLocaleString("en", { month: "short", timeZone: "UTC" })} ${date.getUTCFullYear()}`;
@@ -90,8 +47,8 @@ module.exports = function (eleventyConfig) {
     }
     return date.toISOString();
   });
-  eleventyConfig.addFilter("relative_url", relativeUrl);
-  eleventyConfig.addFilter("absolute_url", absoluteUrl);
+  eleventyConfig.addFilter("relative_url", (value) => relativeUrl(siteData, value));
+  eleventyConfig.addFilter("absolute_url", (value) => absoluteUrl(siteData, value));
   eleventyConfig.addFilter("xml_escape", xmlEscape);
   eleventyConfig.addFilter("markdownify", (value) => md.render(String(value || "")));
   eleventyConfig.addFilter("strip_html", stripHtml);
@@ -110,20 +67,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("jsonify", (value) => JSON.stringify(value));
   eleventyConfig.addFilter("escape", (value) => xmlEscape(value));
   eleventyConfig.addFilter("prepend", (value, prefix) => `${prefix || ""}${value || ""}`);
+}
 
-  eleventyConfig.addCollection("posts", () => siteData.posts);
-  eleventyConfig.addCollection("authors", () => siteData.authors);
-
-  return {
-    dir: {
-      input: "src",
-      output: "_site",
-      includes: "_includes",
-      layouts: "_layouts",
-      data: "_data",
-    },
-    markdownTemplateEngine: "liquid",
-    htmlTemplateEngine: "liquid",
-    templateFormats: ["md", "html", "liquid", "xml", "txt", "json"],
-  };
+module.exports = {
+  registerFilters,
+  slugify,
+  xmlEscape,
 };

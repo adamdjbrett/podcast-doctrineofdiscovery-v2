@@ -23,6 +23,14 @@ const legacyRedirects = {
   "/episodes/category/season-2/": `${SITE_URL}/season2/episode-01/`,
   "/episodes/category/season-2/episode-01/": `${SITE_URL}/season2/episode-01/`,
   "/season2/episode-": `${SITE_URL}/season2/episode-01/`,
+  "/special/episode-01/": `${SITE_URL}/special/s01/`,
+  "/special/episode-02/": `${SITE_URL}/special/s02/`,
+  "/special/episode-03/": `${SITE_URL}/special/s03/`,
+  "/special/episode-04/": `${SITE_URL}/special/s04/`,
+  "/special/episode-05/": `${SITE_URL}/special/s05/`,
+  "/special/episode-06/": `${SITE_URL}/special/s06/`,
+  "/special/episode-07/": `${SITE_URL}/special/s07/`,
+  "/special/episode-08/": `${SITE_URL}/special/s08/`,
   "/assets/pdfs/S02E01-Hidden-Roots-White-Supremacy-Robert-P-Jones-PRRI-TRANSCRIPT.pdf": `${SITE_URL}/season3/episode-01/`,
   "/adam/": `${SITE_URL}/authors/adamdjbrett/`,
   "/Search/": `${SITE_URL}/search/`,
@@ -112,7 +120,7 @@ function cleanExcerpt(value) {
 }
 
 function readPosts() {
-  const postsDir = path.join(ROOT, "src", "content", "_posts");
+  const postsDir = path.join(ROOT, "src", "content", "episodes");
   const posts = walk(postsDir, (file) => /\.md$/.test(file)).map((inputPath) => {
     const parsed = parseFrontMatter(inputPath);
     const slug = fileSlug(inputPath);
@@ -146,7 +154,7 @@ function readPosts() {
 }
 
 function readAuthors() {
-  const authorsDir = path.join(ROOT, "src", "content", "_authors");
+  const authorsDir = path.join(ROOT, "src", "content", "authors");
   return walk(authorsDir, (file) => /\.md$/.test(file)).map((inputPath) => {
     const parsed = parseFrontMatter(inputPath);
     const slug = fileSlug(inputPath);
@@ -267,7 +275,7 @@ function redirectListFrom(redirects) {
 }
 
 function buildSiteData() {
-  const config = readYamlFile(path.join(ROOT, "_config.yml"));
+  const config = readYamlFile(path.join(ROOT, "src", "_data", "site.yml"));
   const posts = readPosts();
   const authors = readAuthors();
   const pages = readPages();

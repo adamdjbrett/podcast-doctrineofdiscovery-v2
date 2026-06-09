@@ -27,6 +27,10 @@ podcast :
 patner:
   text: This project is supported by grants from the Hendricks Chapel Syracuse University and the Henry Luce Foundation.
   title: Partners
+
+partner:
+  text: This project is supported by grants from the Hendricks Chapel Syracuse University and the Henry Luce Foundation.
+  title: Partners
   
 footer:
   logo: /assets/images/blue-olive.svg
