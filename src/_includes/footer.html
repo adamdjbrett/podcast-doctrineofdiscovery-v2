@@ -1,8 +1,10 @@
-<div class=" border-top border-secondary">
+<div class="border-top border-secondary h-card">
 <div class="container">
 <div class="row mt-5 mb-5">
 <div class="col-md-6 p-3 p-md-5">
-<a href="/"><img class="img-fluid" alt="podcast" width="320" height="240" src="{{site.footer.logo}}"/></a>
+<a class="u-url" href="/"><img class="img-fluid u-logo" alt="podcast" width="320" height="240" src="{{site.footer.logo}}"/></a>
+<p class="p-name visually-hidden">{{ site.title }}</p>
+<p class="p-org visually-hidden">{{ site.people.publisher.name }}</p>
 </div>
 {%- include "widget/menu1.html" -%}
 {%- include "widget/menu2.html" -%}

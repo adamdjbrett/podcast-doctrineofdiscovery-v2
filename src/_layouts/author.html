@@ -3,19 +3,19 @@
 
 <div class="container">
 <div class="row">
-<div class="col-md-10 offset-md-1 p-3 p-md-5 text-white">
+<div class="col-md-10 offset-md-1 p-3 p-md-5 text-white h-card">
 <div class="row">
 {% if image %}
-<div class="col-md-4 p-3"><img class="img-fluid mt-3 mb-3 img-profile" width="100%" height="100%" alt="{{titlte}}" src="{{image}}"/></div>
+<div class="col-md-4 p-3"><img class="img-fluid mt-3 mb-3 img-profile u-photo" width="100%" height="100%" alt="{{title}}" src="{{image}}"/></div>
 <div class="col-md-8 p-3 p-md-5">
-<h1><strong><a href="{{page.url}}" rel="author" class="text-oreo">{{title}}</a></strong></h1>
-<h3>{{description}}</h3>
-{% for s in social %}<a href="{{s.url}}" title="{{s.title}}" class="ms-3 me-3"><i class="{{s.icon}} fa-2x"></i></a>{% endfor %}
+<h1><strong><a href="{{page.url}}" rel="author" class="text-oreo u-url p-name">{{title}}</a></strong></h1>
+<h3 class="p-note">{{description}}</h3>
+{% for s in social %}<a href="{{s.url}}" title="{{s.title}}" class="ms-3 me-3 u-url"><i class="{{s.icon}} fa-2x"></i></a>{% endfor %}
 </div>
 {% else %}
-<h1><strong><a href="{{page.url}}" class="text-oreo">{{title}}</a></strong></h1>
-<h3>{{description}}</h3>
-{% for s in social %}<a href="{{s.url}}" title="{{s.title}}" class="ms-3 me-3"><i class="{{s.icon}} fa-2x"></i></a>{% endfor %}
+<h1><strong><a href="{{page.url}}" class="text-oreo u-url p-name">{{title}}</a></strong></h1>
+<h3 class="p-note">{{description}}</h3>
+{% for s in social %}<a href="{{s.url}}" title="{{s.title}}" class="ms-3 me-3 u-url"><i class="{{s.icon}} fa-2x"></i></a>{% endfor %}
 {% endif %}
 </div>
 {{content}}

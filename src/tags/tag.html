@@ -1,0 +1,26 @@
+---
+layout: new
+pagination:
+  data: site.tagList
+  size: 1
+  alias: tag_item
+permalink: "{{ tag_item.url }}"
+eleventyComputed:
+  title: "Episodes tagged {{ tag_item.name }}"
+  description: "Podcast episodes tagged {{ tag_item.name }}."
+---
+
+<section class="container border-top border-secondary">
+  <div class="row mt-5">
+    <div class="col-12">
+      <p><a href="/tags/" class="text-oreo">All tags</a></p>
+      <h1>{{ tag_item.name }}</h1>
+    </div>
+  </div>
+  <div class="entries-list row">
+    {% for post in tag_item.posts %}
+      {% assign entry = post %}
+      {% include "entry.html" %}
+    {% endfor %}
+  </div>
+</section>

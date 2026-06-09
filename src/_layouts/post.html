@@ -1,6 +1,7 @@
 {%- include "head.html" -%}
 {%- include "widget/navbar.html" -%}
 
+<main class="h-entry">
 <div class="container">
 <div class="row mt-5">
 <div class="col-md-6 p-3 p-md-5 text-white language-markup"
@@ -15,20 +16,20 @@
 Author: 
   {% assign author = site.authors | where: 'uid', author | first %}
   {% if author %}
-    <a rel="author" href="{{ author.url }}" class="ms-1">{{ author.uid }}</a>
+    <a rel="author" class="p-author h-card ms-1" href="{{ author.url }}"><span class="p-name">{{ author.title | default: author.uid }}</span></a>
   {% endif %}
 </p>
 <p><small>  {% for category in categories %}
     {% capture category_name %}{{ category }}{% endcapture %}
-    <a href="{{site.baseurl}}/categories.html#{{category}}">{{ category_name }}&nbsp;</a> ·
-  {% endfor %}  {{ date | date_to_string }} <span class="ms-5">
+    <a href="{{site.baseurl}}/categories/#{{category}}">{{ category_name }}&nbsp;</a> ·
+  {% endfor %}  <time class="dt-published" datetime="{{ date | date_to_xmlschema }}">{{ date | date_to_string }}</time> <span class="ms-5">
 <a href="{{site.notes.url}}" class="text-oreo text-nodeco" title="{{site.notes.text}}">{{site.notes.text}}</a></span>
 </small></p>
 <h1>
-<strong><a href="{{page.url}}" class="text-white">
+<strong><a href="{{page.url}}" class="text-white u-url p-name">
 {{title}}
 </a></strong></h1>
-<p>{{subtitle}}</p>
+<p class="p-summary">{{description | default: subtitle}}</p>
 <div class="p-1">
 <small>
 <span>
@@ -36,7 +37,7 @@ Author:
     {% assign tag_slug = tag | slugify | downcase %}
     {% assign tag_words = tag | replace: '-', ' ' | split: ' ' %}
     {% capture tag_label %}{% for word in tag_words %}{{ word | downcase | capitalize }}{% unless forloop.last %} {% endunless %}{% endfor %}{% endcapture %}
-    <a href="{{site.baseurl}}/tag.html#{{ tag_slug }}"><code><nobr>#{{ tag_label | strip }}</nobr></code>&nbsp;</a>
+    <a href="{{site.baseurl}}/tags/{{ tag_slug }}/" class="p-category"><code><nobr>#{{ tag_label | strip }}</nobr></code>&nbsp;</a>
   {% endfor %}
 </span>
 </small>
@@ -51,7 +52,7 @@ Author:
 <div class="row">
 <div class="col-md-8 offset-md-2 p-3 p-md-5">
 <div class="mb-5 ">
-<section id="features-full" class="language-markup">
+<section id="features-full" class="language-markup e-content">
  	{{episode_embed_html}}
 	</div>
 	{{content}}
@@ -77,5 +78,6 @@ Author:
 </div>
 </div>
 
+</main>
 
 {%- include "footer.html" -%}

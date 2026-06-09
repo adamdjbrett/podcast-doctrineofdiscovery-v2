@@ -1,4 +1,4 @@
-const { absoluteUrl, relativeUrl } = require("./urls.js");
+import { absoluteUrl, relativeUrl } from "./urls.js";
 
 function normalizeDate(value) {
   if (value instanceof Date) {
@@ -24,7 +24,7 @@ function xmlEscape(value) {
     .replace(/'/g, "&apos;");
 }
 
-function slugify(value) {
+export function slugify(value) {
   return String(value || "")
     .toLowerCase()
     .trim()
@@ -33,7 +33,7 @@ function slugify(value) {
     .replace(/^-+|-+$/g, "");
 }
 
-function registerFilters(eleventyConfig, { md, siteData }) {
+export function registerFilters(eleventyConfig, { md, siteData }) {
   eleventyConfig.addFilter("date_to_string", (value) => {
     const date = normalizeDate(value);
     return `${pad(date.getUTCDate())} ${date.toLocaleString("en", { month: "short", timeZone: "UTC" })} ${date.getUTCFullYear()}`;
@@ -69,8 +69,4 @@ function registerFilters(eleventyConfig, { md, siteData }) {
   eleventyConfig.addFilter("prepend", (value, prefix) => `${prefix || ""}${value || ""}`);
 }
 
-module.exports = {
-  registerFilters,
-  slugify,
-  xmlEscape,
-};
+export { xmlEscape };

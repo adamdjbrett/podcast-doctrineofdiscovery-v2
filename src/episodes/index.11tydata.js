@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   pagination: {
     data: "site.posts",
     size: 6,

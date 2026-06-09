@@ -1,4 +1,4 @@
-function relativeUrl(siteData, value) {
+export function relativeUrl(siteData, value) {
   const baseurl = siteData.baseurl || "";
   const url = String(value || "");
   if (!url || /^([a-z]+:)?\/\//i.test(url) || url.startsWith("#")) {
@@ -7,15 +7,10 @@ function relativeUrl(siteData, value) {
   return `${baseurl}${url.startsWith("/") ? "" : "/"}${url}`;
 }
 
-function absoluteUrl(siteData, value) {
+export function absoluteUrl(siteData, value) {
   const url = String(value || "");
   if (/^([a-z]+:)?\/\//i.test(url)) {
     return url;
   }
   return `${siteData.url}${relativeUrl(siteData, url)}`;
 }
-
-module.exports = {
-  absoluteUrl,
-  relativeUrl,
-};

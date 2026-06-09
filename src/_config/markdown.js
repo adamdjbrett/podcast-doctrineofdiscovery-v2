@@ -1,3 +1,3 @@
-const MarkdownIt = require("markdown-it");
+import MarkdownIt from "markdown-it";
 
-module.exports = new MarkdownIt({ html: true, linkify: false, typographer: false });
+export default new MarkdownIt({ html: true, linkify: false, typographer: false });

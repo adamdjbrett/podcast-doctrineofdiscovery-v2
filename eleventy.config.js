@@ -1,14 +1,15 @@
-const { buildSiteData } = require("./scripts/site-data.cjs");
-const packageJson = require("./package.json");
-const { registerCollections } = require("./src/_config/collections.js");
-const { registerFilters } = require("./src/_config/filters.js");
-const { registerGlobalData } = require("./src/_config/global-data.js");
-const md = require("./src/_config/markdown.js");
-const { registerPassthroughCopy } = require("./src/_config/passthrough.js");
+import fs from "node:fs";
+import { buildSiteData } from "./scripts/site-data.mjs";
+import { registerCollections } from "./src/_config/collections.js";
+import { registerFilters } from "./src/_config/filters.js";
+import { registerGlobalData } from "./src/_config/global-data.js";
+import md from "./src/_config/markdown.js";
+import { registerPassthroughCopy } from "./src/_config/passthrough.js";
 
+const packageJson = JSON.parse(fs.readFileSync(new URL("./package.json", import.meta.url), "utf8"));
 const siteData = buildSiteData();
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.setLibrary("md", md);
 
   registerPassthroughCopy(eleventyConfig);
@@ -28,4 +29,4 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: "liquid",
     templateFormats: ["md", "html", "liquid", "xml", "txt", "json"],
   };
-};
+}

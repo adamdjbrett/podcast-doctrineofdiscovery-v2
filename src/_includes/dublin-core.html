@@ -1,0 +1,18 @@
+{% if layout == "post" %}
+<meta name="DC.title" content="{{ title | escape }}">
+{% for person in creators %}<meta name="DC.creator" content="{{ person.name | escape }}">{% endfor %}
+{% for tag in tags %}<meta name="DC.subject" content="{{ tag | escape }}">{% endfor %}
+<meta name="DC.description" content="{{ description | default: excerpt | escape }}">
+<meta name="DC.publisher" content="{{ publisher.name | escape }}">
+{% for person in contributors %}<meta name="DC.contributor" content="{{ person.name | escape }}">{% endfor %}
+<meta name="DC.date" content="{{ date | date_to_xmlschema }}">
+<meta name="DC.type" content="{{ type | escape }}">
+<meta name="DC.format" content="{{ format | escape }}">
+<meta name="DC.identifier" content="{{ identifier | escape }}">
+<meta name="DC.source" content="{{ source | escape }}">
+<meta name="DC.language" content="{{ language | escape }}">
+{% for relation in relations %}<meta name="DC.relation" content="{{ relation | escape }}">{% endfor %}
+{% for item in coverage %}<meta name="DC.coverage" content="{{ item | escape }}">{% endfor %}
+<meta name="DC.rights" content="{{ rights.text | escape }} {{ rights.url | escape }}">
+<meta name="DCTERMS.license" content="{{ rights.url | escape }}">
+{% endif %}

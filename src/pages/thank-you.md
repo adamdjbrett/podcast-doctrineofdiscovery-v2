@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Thank you
+permalink: /thank-you/
 sitemap:
   exclude: "yes"
 ---

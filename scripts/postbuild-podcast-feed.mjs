@@ -1,9 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { createRequire } from "node:module";
-
-const require = createRequire(import.meta.url);
-const { ROOT } = require("./site-data.cjs");
+import { ROOT } from "./site-data.mjs";
 
 const SOURCE_FEED_URL = "https://feeds.buzzsprout.com/1926214.rss";
 const SITE_URL = "https://podcast.doctrineofdiscovery.org";

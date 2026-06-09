@@ -1,0 +1,16 @@
+---
+layout: new
+title: Tags
+description: Browse Mapping the Doctrine of Discovery podcast episodes by topic.
+permalink: /tags/
+---
+
+<section class="container border-top border-secondary">
+  <div class="row mt-5">
+    {% for tag in site.tagList %}
+      <div class="col-md-3 p-3">
+        <a href="{{ tag.url }}" class="btn-orange">{{ tag.name }} <span class="orange">{{ tag.count }}</span></a>
+      </div>
+    {% endfor %}
+  </div>
+</section>

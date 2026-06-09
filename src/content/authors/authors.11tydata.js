@@ -1,6 +1,6 @@
-const { fileSlug } = require("../../../scripts/site-data.cjs");
+import { fileSlug } from "../../../scripts/site-data.mjs";
 
-module.exports = {
+export default {
   layout: "author",
   eleventyComputed: {
     slug: (data) => fileSlug(data.page.inputPath),

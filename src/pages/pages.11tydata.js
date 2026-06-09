@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   eleventyComputed: {
     permalink: (data) => {
       if (data.permalink) {

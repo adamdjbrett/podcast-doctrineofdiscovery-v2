@@ -1,4 +1,4 @@
-function registerGlobalData(eleventyConfig, { packageJson, siteData }) {
+export function registerGlobalData(eleventyConfig, { packageJson, siteData }) {
   eleventyConfig.addGlobalData("site", () => siteData);
   eleventyConfig.addGlobalData("eleventyVersion", () => packageJson.devDependencies["@11ty/eleventy"].replace(/^[^\d]*/, ""));
   eleventyConfig.addGlobalData("eleventyComputed", {
@@ -13,7 +13,3 @@ function registerGlobalData(eleventyConfig, { packageJson, siteData }) {
     fileSlug: (data) => data.page?.fileSlug || data.slug,
   });
 }
-
-module.exports = {
-  registerGlobalData,
-};
