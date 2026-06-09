@@ -1,3 +1,5 @@
+import { buildJsonLd } from "../../scripts/schema-data.mjs";
+
 export function registerGlobalData(eleventyConfig, { packageJson, siteData }) {
   eleventyConfig.addGlobalData("site", () => siteData);
   eleventyConfig.addGlobalData("eleventyVersion", () => packageJson.devDependencies["@11ty/eleventy"].replace(/^[^\d]*/, ""));
@@ -11,5 +13,6 @@ export function registerGlobalData(eleventyConfig, { packageJson, siteData }) {
       return postIndex > 0 ? siteData.posts[postIndex - 1] || {} : {};
     },
     fileSlug: (data) => data.page?.fileSlug || data.slug,
+    jsonLd: (data) => buildJsonLd(data),
   });
 }
