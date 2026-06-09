@@ -40,6 +40,7 @@ PDF metadata checks use `pdfinfo` and `qpdf`. Updating PDF metadata uses Ghostsc
 ```sh
 npm run check:esm
 npm run check:build
+npm run check:headers
 npm run check:feeds
 npm run check:assets
 npm run check:links
@@ -68,6 +69,8 @@ Citation downloads are generated for every episode as RIS and CSL JSON under `/a
 ## Deployment
 
 GitHub Actions install Node 22 plus Ghostscript, Poppler, and qpdf, then build and verify the site with `npm test`. Successful runs deploy the generated `_site/` directory to Cloudflare Workers and XMIT.
+
+Cloudflare Workers static assets allow at most 100 `_headers` rules, so `_site/_headers` intentionally contains only feed canonical `Link` headers for `/rss.xml`, `/feed.xml`, and `/podcast.xml`. PDF and citation metadata lives in the generated PDF/RIS/CSL JSON files rather than per-file HTTP headers. `wrangler.toml` does not define a build command; CI deploys the already-built and verified `_site` directory.
 
 ## Notes
 

@@ -13,13 +13,14 @@
     "check:citations": "node scripts/check-citations.mjs",
     "check:esm": "node scripts/check-esm.mjs",
     "check:feeds": "node scripts/check-feeds.mjs",
+    "check:headers": "node scripts/check-headers.mjs",
     "check:links": "node scripts/check-links.mjs",
     "check:metadata": "node scripts/check-metadata.mjs",
     "check:pdfs": "node scripts/check-pdfs.mjs",
     "check:redirects": "node scripts/check-redirects.mjs",
     "update:pdf-metadata": "node scripts/update-pdf-metadata.mjs",
     "deploy": "npm run build && npx wrangler deploy",
-    "test": "npm run build && npm run check:esm && npm run check:build && npm run check:feeds && npm run check:assets && npm run check:links && npm run check:redirects && npm run check:metadata && npm run check:citations && npm run check:pdfs"
+    "test": "npm run build && npm run check:esm && npm run check:build && npm run check:headers && npm run check:feeds && npm run check:assets && npm run check:links && npm run check:redirects && npm run check:metadata && npm run check:citations && npm run check:pdfs"
   },
   "keywords": [],
   "author": "",
