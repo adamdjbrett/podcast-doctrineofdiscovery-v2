@@ -1,16 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { buildSiteData } from "./site-data.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PUBLIC_DIR = path.join(ROOT, "public");
 const SCAN_DIRS = ["src", "scripts"].map((dir) => path.join(ROOT, dir));
 const SOURCE_ONLY_EXTENSIONS = new Set([".ai", ".psd", ".sketch", ".fig"]);
-const LEGACY_REDIRECT_SOURCES = new Set([
-  "/assets/pdfs/S02E01-Hidden-Roots-White-Supremacy-Robert-P-Jones-PRRI-TRANSCRIPT.pdf",
-  "/assets/pdfs/S2E01–The-Backstory-of-Johnson-v-MIntosh-Lindsay-Robertson-TRANSCRIPT.pdf",
-  "/assets/pdfs/S02E02-The-International-Dimensions-of-Johnson-v-M’Intosh-Robert-J-Miller-TRANSCRIPT.pdf",
-]);
+const LEGACY_REDIRECT_SOURCES = new Set(Object.keys(buildSiteData().redirects));
 const REFERENCE_RE = /["'(`](\/(?:assets|site\.webmanifest|favicon\.ico|browserconfig\.xml)[^"'`) <>\n]*)/g;
 
 const publicFiles = walk(PUBLIC_DIR);
