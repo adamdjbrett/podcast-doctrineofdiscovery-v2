@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
 import MarkdownIt from "markdown-it";
+import { PODCASTING_2_0 } from "./podcasting-data.mjs";
 
 const md = new MarkdownIt({ html: true, linkify: false, typographer: false });
 
@@ -400,6 +401,7 @@ export function buildSiteData() {
   return {
     ...config,
     people: PODCAST_PEOPLE,
+    podcasting: PODCASTING_2_0,
     rights: RIGHTS,
     url: (config.url || SITE_URL).replace(/\/$/, ""),
     baseurl: config.baseurl || "",

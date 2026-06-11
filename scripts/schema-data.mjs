@@ -1,4 +1,5 @@
 import { SITE_URL, slugify } from "./site-data.mjs";
+import { PODCASTING_2_0 } from "./podcasting-data.mjs";
 
 const ANGHAMI_URL = [
   "https://anghami.app.link/?$deeplink_path=podcast%2F1029156115%3Famplitude_device_id%3D25ea4fbc-ba4d-417d-a023-bcb415102fd8R",
@@ -17,7 +18,7 @@ const SAME_AS = [
   "https://castro.fm/share/podcast/36e330ca-d4ce-4f7a-8b81-310c658ae618",
   "https://facebook.com/indigenousvalues",
   "https://goodpods.com/podcasts/mapping-the-doctrine-of-discovery-198087",
-  "https://higheredpods.com/podcast/mapping-the-doctrine-of-discovery-1781197717154x6260484790613443000",
+  PODCASTING_2_0.higherEdPodsUrl,
   "https://metacast.app/podcast/mapping-the-doctrine-of-discovery/wYnKB8uW",
   "https://open.spotify.com/show/5VoYjujmNFCYS89vSsgl1c",
   "https://pca.st/ah3neigt",
