@@ -1,10 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
-import { PODCASTING_2_0, op3Url } from "./podcasting-data.mjs";
-import { ROOT } from "./site-data.mjs";
+import { PODCASTING_2_0 } from "./podcasting-data.mjs";
+import { ROOT, SITE_URL, readPosts } from "./site-data.mjs";
 
 const SOURCE_FEED_URL = "https://feeds.buzzsprout.com/1926214.rss";
-const SITE_URL = "https://podcast.doctrineofdiscovery.org";
 const OUTPUT_FILENAME = "podcast.xml";
 const ITEM_IMAGE_URL = `${SITE_URL}/assets/img/mapping-doctrine-of-discovery-favicon.png`;
 const XSL_HREF_PATH = "/assets/xsl/podcast-feed.xsl";
@@ -30,10 +29,50 @@ function attrValue(tag, attrName) {
   return match ? match[1] : "";
 }
 
-function prefixEnclosures(xml) {
-  return xml.replace(/<enclosure\b([^>]*?)url=["']([^"']+)["']([^>]*)\/>/g, (match, before, url, after) => {
-    return `<enclosure${before}url="${op3Url(url)}"${after}/>`;
-  });
+function absoluteUrl(value) {
+  if (!value) {
+    return "";
+  }
+  if (/^https?:\/\//.test(value)) {
+    return value;
+  }
+  return `${SITE_URL}${value.startsWith("/") ? value : `/${value}`}`;
+}
+
+function buzzsproutIdFromPost(post) {
+  const match = String(post.rawContent || "").match(/buzzsprout\.com\/1926214\/(?:episodes\/)?(\d+)/);
+  return match ? match[1] : "";
+}
+
+function buzzsproutIdFromItem(item) {
+  return (
+    tagText(item, "guid").match(/^Buzzsprout-(\d+)$/)?.[1] ||
+    item.match(/buzzsprout\.com\/1926214\/(?:episodes\/)?(\d+)/)?.[1] ||
+    ""
+  );
+}
+
+function transcriptMapFromPosts(posts) {
+  return new Map(
+    posts
+      .map((post) => [buzzsproutIdFromPost(post), post.transcript_pdf])
+      .filter(([id, transcriptPdf]) => id && transcriptPdf)
+  );
+}
+
+function localTranscriptXml(transcriptPdf) {
+  const url = absoluteUrl(transcriptPdf);
+  return url ? `<podcast:transcript url="${xmlEscape(url)}" type="application/pdf" />` : "";
+}
+
+function addLocalTranscriptIfMissing(item, transcriptByBuzzsproutId) {
+  if (/<podcast:transcript\b/.test(item)) {
+    return item;
+  }
+
+  const transcriptPdf = transcriptByBuzzsproutId.get(buzzsproutIdFromItem(item));
+  const transcript = localTranscriptXml(transcriptPdf);
+  return transcript ? item.replace(/<\/item>/, `${transcript}</item>`) : item;
 }
 
 function isEpisodeZero(item) {
@@ -82,6 +121,17 @@ function insertBeforeFirstItem(xml, block) {
   return xml.replace(/(\s*<item\b)/, `\n${block}\n$1`);
 }
 
+function insertAfterChannelOpen(xml, block) {
+  return xml.replace(/(<channel\b[^>]*>)/, `$1\n${block}`);
+}
+
+function ensurePodcastGuid(xml) {
+  if (/<podcast:guid\b/.test(xml)) {
+    return xml.replace(/<podcast:guid\b[^>]*>[\s\S]*?<\/podcast:guid>/, `<podcast:guid>${PODCASTING_2_0.guid}</podcast:guid>`);
+  }
+  return insertAfterChannelOpen(xml, `<podcast:guid>${PODCASTING_2_0.guid}</podcast:guid>`);
+}
+
 async function fetchFeed(url, redirects = 5) {
   if (redirects <= 0) {
     throw new Error("Too many redirects while fetching source feed");
@@ -102,9 +152,10 @@ async function fetchFeed(url, redirects = 5) {
   return response.text();
 }
 
-function transformFeed(xml) {
+function transformFeed(xml, posts = readPosts()) {
   let output = xml.replace(/^\s*<\?xml-stylesheet .*?\?>\s*/m, "");
   let trailer = "";
+  const transcriptByBuzzsproutId = transcriptMapFromPosts(posts);
 
   output = output.replace(/<rss\b([^>]*)>/, (match, attrs) => {
     const nextAttrs = [
@@ -123,18 +174,17 @@ function transformFeed(xml) {
     /(<channel\b[^>]*>)/,
     `$1\n<atom:link href="${SITE_URL}/${OUTPUT_FILENAME}" rel="self" type="application/rss+xml"/>`
   );
+  output = ensurePodcastGuid(output);
 
   output = output.replace(/<item\b[\s\S]*?<\/item>/g, (item) => {
-    const itemWithPrefixedEnclosures = prefixEnclosures(item);
-    const itemWithEpisodeType = isEpisodeZero(itemWithPrefixedEnclosures)
-      ? markTrailerEpisode(itemWithPrefixedEnclosures)
-      : itemWithPrefixedEnclosures;
+    const itemWithEpisodeType = isEpisodeZero(item) ? markTrailerEpisode(item) : item;
+    const itemWithTranscript = addLocalTranscriptIfMissing(itemWithEpisodeType, transcriptByBuzzsproutId);
 
-    if (isEpisodeZero(itemWithEpisodeType)) {
-      trailer = trailerFromItem(itemWithEpisodeType);
+    if (isEpisodeZero(itemWithTranscript)) {
+      trailer = trailerFromItem(itemWithTranscript);
     }
 
-    const withoutImages = itemWithEpisodeType
+    const withoutImages = itemWithTranscript
       .replace(/\s*<itunes:image\b[^>]*\/>\s*/g, "")
       .replace(/\s*<media:thumbnail\b[^>]*\/>\s*/g, "");
     return withoutImages.replace(

@@ -3,9 +3,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
 import MarkdownIt from "markdown-it";
+import { openTranscriptPdfLinksInNewWindow } from "./markdown-transcript-links.mjs";
 import { PODCASTING_2_0 } from "./podcasting-data.mjs";
 
-const md = new MarkdownIt({ html: true, linkify: false, typographer: false });
+const md = openTranscriptPdfLinksInNewWindow(new MarkdownIt({ html: true, linkify: false, typographer: false }));
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const SITE_URL = "https://podcast.doctrineofdiscovery.org";
