@@ -63,6 +63,9 @@ shop:
  - title: ListenNotes
    icon: /assets/images/icon/ln.svg
    link:  https://doctrineofdiscovery.org/s/listennotes
+ - title: Pod.link
+   icon: /assets/images/icon/pod.link.ico
+   link: https://pod.link/1609802758
  - title: OverCast
    icon: /assets/images/icon/ov.svg
    link:  https://doctrineofdiscovery.org/s/overcast

@@ -28,6 +28,7 @@ const SAME_AS = [
   "https://www.podchaser.com/podcasts/mapping-the-doctrine-of-discov-4249128",
   "https://www.radio.net/podcast/mapping-the-doctrine-of-discovery",
   "https://tunein.com/podcasts/Mapping-the-Doctrine-of-Discovery-p1625376/",
+  "https://pod.link/1609802758",
   "https://youtube.com/c/IndigenousValuesInitiative",
 ];
 
