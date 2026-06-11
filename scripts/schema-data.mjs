@@ -18,6 +18,7 @@ const SAME_AS = [
   "https://twitter.com/indigenousVI",
   "https://www.amazon.com/Mapping-the-Doctrine-of-Discovery/dp/B08K587WP7/",
   "https://www.audible.com/podcast/Mapping-the-Doctrine-of-Discovery/episodes/B08K573YQP",
+  "https://higheredpods.com/podcast/mapping-the-doctrine-of-discovery-1781197717154x6260484790613443000",
   "https://www.deezer.com/us/show/3406542",
   "https://www.facebook.com/americanindianlawalliance",
   "https://www.facebook.com/doctrineofdiscovery",

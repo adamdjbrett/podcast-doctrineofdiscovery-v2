@@ -57,6 +57,9 @@ shop:
  - title: GoodPods
    icon: /assets/images/icon/goo.svg
    link:  https://doctrineofdiscovery.org/s/google
+ - title: HigherEdPods
+   icon: /assets/images/icon/HigherEdPods.ico
+   link: https://higheredpods.com/podcast/mapping-the-doctrine-of-discovery-1781197717154x626048479061344300
  - title: IheartRadio
    icon: /assets/images/icon/ih.svg
    link:  https://doctrineofdiscovery.org/s/iheartradio
