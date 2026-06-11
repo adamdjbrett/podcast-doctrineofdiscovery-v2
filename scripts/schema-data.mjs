@@ -1,24 +1,39 @@
 import { SITE_URL, slugify } from "./site-data.mjs";
 
+const ANGHAMI_URL = [
+  "https://anghami.app.link/?$deeplink_path=podcast%2F1029156115%3Famplitude_device_id%3D25ea4fbc-ba4d-417d-a023-bcb415102fd8R",
+  "$ios_url=https%3A%2F%2Fplay.anghami.com%2Fpodcast%2F1029156115%3Famplitude_device_id%3D25ea4fbc-ba4d-417d-a023-bcb415102fd8R",
+  "$android_url=https%3A%2F%2Fplay.anghami.com%2Fpodcast%2F1029156115%3Famplitude_device_id%3D25ea4fbc-ba4d-417d-a023-bcb415102fd8R",
+  "$ios_deeplink_path=podcast%2F1029156115%3Famplitude_device_id%3D25ea4fbc-ba4d-417d-a023-bcb415102fd8R",
+  "$android_deeplink_path=podcast%2F1029156115%3Famplitude_device_id%3D25ea4fbc-ba4d-417d-a023-bcb415102fd8R",
+  "$fallback_url=https%3A%2F%2Fplay.anghami.com%2Fpodcast%2F1029156115%3Famplitude_device_id%3D25ea4fbc-ba4d-417d-a023-bcb415102fd8R",
+  "$canonical_url=https%3A%2F%2Fplay.anghami.com%2Fpodcast%2F1029156115",
+  "~campaign_id=web",
+].join("&");
+
 const SAME_AS = [
+  ANGHAMI_URL,
   "https://castbox.fm/channel/id4792172",
   "https://castro.fm/share/podcast/36e330ca-d4ce-4f7a-8b81-310c658ae618",
   "https://facebook.com/indigenousvalues",
   "https://goodpods.com/podcasts/mapping-the-doctrine-of-discovery-198087",
+  "https://higheredpods.com/podcast/mapping-the-doctrine-of-discovery-1781197717154x6260484790613443000",
+  "https://metacast.app/podcast/mapping-the-doctrine-of-discovery/wYnKB8uW",
   "https://open.spotify.com/show/5VoYjujmNFCYS89vSsgl1c",
   "https://pca.st/ah3neigt",
   "https://player.fm/series/mapping-the-doctrine-of-discovery",
+  "https://pod.link/1609802758",
   "https://podbay.fm/p/mapping-the-doctrine-of-discovery",
   "https://podcastaddict.com/podcast/mapping-the-doctrine-of-discovery/6231358",
   "https://podcastindex.org/podcast/4947967",
   "https://podcasts.apple.com/us/podcast/mapping-the-doctrine-of-discovery/id1609802758",
   "https://podtail.com/en/podcast/mapping-the-doctrine-of-discovery/",
   "https://rss.buzzsprout.com/1926214.rss",
+  "https://tunein.com/podcasts/Mapping-the-Doctrine-of-Discovery-p1625376/",
   "https://twitter.com/ailanyc",
   "https://twitter.com/indigenousVI",
   "https://www.amazon.com/Mapping-the-Doctrine-of-Discovery/dp/B08K587WP7/",
   "https://www.audible.com/podcast/Mapping-the-Doctrine-of-Discovery/episodes/B08K573YQP",
-  "https://higheredpods.com/podcast/mapping-the-doctrine-of-discovery-1781197717154x6260484790613443000",
   "https://www.deezer.com/us/show/3406542",
   "https://www.facebook.com/americanindianlawalliance",
   "https://www.facebook.com/doctrineofdiscovery",
@@ -28,15 +43,16 @@ const SAME_AS = [
   "https://www.instagram.com/indigenousvalues/",
   "https://www.podchaser.com/podcasts/mapping-the-doctrine-of-discov-4249128",
   "https://www.radio.net/podcast/mapping-the-doctrine-of-discovery",
-  "https://tunein.com/podcasts/Mapping-the-Doctrine-of-Discovery-p1625376/",
-  "https://pod.link/1609802758",
   "https://youtube.com/c/IndigenousValuesInitiative",
 ];
 
 function compact(value) {
   if (Array.isArray(value)) {
-    return value.map(compact).filter((item) => item !== undefined && item !== null && item !== "");
+    return value
+      .map(compact)
+      .filter((item) => item !== undefined && item !== null && item !== "");
   }
+
   if (value && typeof value === "object") {
     return Object.fromEntries(
       Object.entries(value)
@@ -182,7 +198,9 @@ function buzzsproutEmbedUrl(rawContent = "") {
 function podcastEpisode(site, data, pageUrl) {
   const pageId = `${absolute(site, pageUrl)}#webpage`;
   const episodeId = `${absolute(site, pageUrl)}#podcast-episode`;
-  const categories = Array.isArray(data.categories) ? data.categories : [data.categories].filter(Boolean);
+  const categories = Array.isArray(data.categories)
+    ? data.categories
+    : [data.categories].filter(Boolean);
   const season = seasonNumber(categories);
   const embedUrl = buzzsproutEmbedUrl(data.rawContent);
 
@@ -217,7 +235,11 @@ function podcastEpisode(site, data, pageUrl) {
     publisher: { "@id": `${absolute(site, "/")}#organization` },
     productionCompany: { "@id": `${absolute(site, "/")}#organization` },
     keywords: (data.tags || []).join(", "),
-    about: (data.tags || []).map((tag) => ({ "@type": "Thing", name: tag, url: absolute(site, `/tags/${slugify(tag)}/`) })),
+    about: (data.tags || []).map((tag) => ({
+      "@type": "Thing",
+      name: tag,
+      url: absolute(site, `/tags/${slugify(tag)}/`),
+    })),
     genre: "Podcast episode",
     encodingFormat: data.format || "audio/mpeg",
     duration: data.duration,
@@ -263,7 +285,9 @@ function webPage(site, data, pageUrl, isEpisode) {
           url: absolute(site, data.image),
         }
       : undefined,
-    mainEntity: isEpisode ? { "@id": `${absolute(site, pageUrl)}#podcast-episode` } : { "@id": `${absolute(site, "/")}#podcast` },
+    mainEntity: isEpisode
+      ? { "@id": `${absolute(site, pageUrl)}#podcast-episode` }
+      : { "@id": `${absolute(site, "/")}#podcast` },
   });
 }
 
@@ -283,5 +307,12 @@ export function buildJsonLd(data) {
     graph.push(podcastEpisode(site, data, pageUrl));
   }
 
-  return `${JSON.stringify({ "@context": "https://schema.org", "@graph": compact(graph) }, null, 2)}\n`;
+  return `${JSON.stringify(
+    {
+      "@context": "https://schema.org",
+      "@graph": compact(graph),
+    },
+    null,
+    2
+  )}\n`;
 }
