@@ -1,4 +1,4 @@
-[![Built with Cloudflare](https://workers.cloudflare.com/built-with-cloudflare.svg)](https://cloudflare.com)
+[![Deploy 11ty to Cloudflare Workers](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/cloudflare-deploy.yml/badge.svg)](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/cloudflare-deploy.yml) [![Built with Cloudflare](https://workers.cloudflare.com/built-with-cloudflare.svg)](https://cloudflare.com)
 
 [![hosted on xmit.co](xmit.gif)](https://xmit.co)
 
