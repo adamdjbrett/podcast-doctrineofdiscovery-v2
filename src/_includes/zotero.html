@@ -1,6 +1,5 @@
-{%- set isEpisode = layout == 'post' -%}
-{%- if isEpisode -%}
-{%- set episodeAuthor = author | default: "Indigenous Values Initiative" -%}
+{%- if layout == 'post' -%}
+{%- assign episodeAuthor = author | default: "Indigenous Values Initiative" -%}
 <!-- Zotero / Highwire / PRISM — podcast episode -->
 <meta property="zotero:itemType" content="podcast" />
 <meta property="dc:title" content="{% if title %}{{ title | escape }}{% else %}{{ site.title | escape }}{% endif %}" />
