@@ -51,9 +51,10 @@ const checks = [
         return [`_site/podcast.xml expected one <podcast:trailer>, found ${trailerCount}`];
       }
 
+      const enclosureCount = (xml.match(/<enclosure\b/g) || []).length;
       const op3Enclosures = (xml.match(/<enclosure\b[^>]*url="https:\/\/op3\.dev\/e\//g) || []).length;
-      if (op3Enclosures > 0) {
-        return [`_site/podcast.xml contains ${op3Enclosures} OP3-prefixed enclosure URL(s), but OP3 is disabled`];
+      if (enclosureCount > 0 && op3Enclosures !== enclosureCount) {
+        return [`_site/podcast.xml has ${enclosureCount} enclosure(s) but only ${op3Enclosures} use OP3 prefixes — expected all enclosures to be OP3-prefixed`];
       }
 
       if (!xml.includes(PODCASTING_2_0.guid)) {
