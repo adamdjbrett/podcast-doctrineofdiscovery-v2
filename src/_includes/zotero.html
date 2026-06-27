@@ -1,0 +1,18 @@
+{%- set isEpisode = layout == 'post' -%}
+{%- if isEpisode -%}
+{%- set episodeAuthor = author | default: "Indigenous Values Initiative" -%}
+<!-- Zotero / Highwire / PRISM — podcast episode -->
+<meta property="zotero:itemType" content="podcast" />
+<meta property="dc:title" content="{% if title %}{{ title | escape }}{% else %}{{ site.title | escape }}{% endif %}" />
+<meta property="dc:creator" content="{{ episodeAuthor | escape }}" />
+{% if date %}<meta property="dc:date" content="{{ date | date: '%Y-%m-%d' }}" />{% endif %}
+<meta property="dc:language" content="en" />
+<meta property="dc:identifier" content="{{ page.url | absolute_url }}" />
+<meta name="citation_author" content="{{ episodeAuthor | escape }}" />
+{% if date %}<meta name="citation_publication_date" content="{{ date | date: '%Y-%m-%d' }}" />{% endif %}
+<meta name="citation_public_url" content="{{ page.url | absolute_url }}" />
+<meta name="citation_language" content="en" />
+{% if page.doi %}<meta name="citation_doi" content="{{ page.doi | escape }}" />{% endif %}
+<meta name="prism.genre" content="podcast" />
+<meta name="prism.publicationName" content="Mapping the Doctrine of Discovery Podcast" />
+{%- endif -%}
