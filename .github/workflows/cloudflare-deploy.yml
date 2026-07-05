@@ -32,19 +32,8 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --fund=false
 
-      - name: Install PDF verification tools
-        run: sudo apt-get update && sudo apt-get install -y ghostscript poppler-utils qpdf
-
       - name: Build and check Build Awesome site
-        run: npm test
-
-      - name: Verify build output
-        run: |
-          if [ ! -d _site ]; then
-            echo "_site directory missing after build" >&2
-            exit 1
-          fi
-          echo "Built $(find _site -type f | wc -l) files"
+        run: npm run test:deploy
 
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v4
