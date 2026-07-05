@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import yaml from "js-yaml";
+import { load } from "js-yaml";
 import MarkdownIt from "markdown-it";
 import { openTranscriptPdfLinksInNewWindow } from "./markdown-transcript-links.mjs";
 import { PODCASTING_2_0 } from "./podcasting-data.mjs";
@@ -76,7 +76,7 @@ function readYamlFile(filePath) {
   if (!fs.existsSync(filePath)) {
     return {};
   }
-  return yaml.load(fs.readFileSync(filePath, "utf8"), { json: true }) || {};
+  return load(fs.readFileSync(filePath, "utf8"), { json: true }) || {};
 }
 
 function walk(dir, predicate = () => true) {
@@ -102,7 +102,7 @@ export function parseFrontMatter(filePath) {
     return { data: {}, content: raw };
   }
   return {
-    data: yaml.load(match[1], { json: true }) || {},
+    data: load(match[1], { json: true }) || {},
     content: raw.slice(match[0].length),
   };
 }

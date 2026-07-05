@@ -1,12 +1,12 @@
 {
   "name": "podcast-doctrineofdiscovery-v2",
   "version": "1.0.0",
-  "description": "11ty site for the Mapping the Doctrine of Discovery Podcast.",
+  "description": "Build Awesome site for the Mapping the Doctrine of Discovery Podcast.",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf _site",
-    "build": "npm run clean && eleventy && npm run generate:postbuild",
+    "build": "npm run clean && buildawesome && npm run generate:postbuild",
     "generate:postbuild": "node scripts/postbuild-citations.mjs && node scripts/postbuild-podcast-feed.mjs && node scripts/postbuild-headers.mjs",
     "check:assets": "node scripts/check-assets.mjs",
     "check:build": "node scripts/check-build-output.mjs",
@@ -25,14 +25,22 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "packageManager": "npm@11.18.0",
+  "engines": {
+    "node": ">=24.14.0",
+    "npm": ">=11.18.0"
+  },
   "devDependencies": {
-    "@11ty/eleventy": "3.1.6",
-    "js-yaml": "4.2.0",
-    "liquidjs": "10.27.0",
-    "markdown-it": "^14.2.0",
-    "wrangler": "4.98.0"
+    "js-yaml": "5.2.1",
+    "liquidjs": "10.27.1",
+    "markdown-it": "14.3.0",
+    "wrangler": "4.107.0"
   },
   "overrides": {
     "undici": "~7.28.0"
+  },
+  "dependencies": {
+    "@11ty/nunjucks": "4.0.0-alpha.3",
+    "@awesome.me/buildawesome": "4.0.0-alpha.10"
   }
 }

@@ -1,4 +1,4 @@
-name: Deploy 11ty to Cloudflare Workers
+name: Deploy Build Awesome to Cloudflare Workers
 
 on:
   push:
@@ -18,21 +18,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '24'
+          node-version: '24.14.0'
           cache: npm
 
+      - name: Update npm
+        run: npm install -g npm@11.18.0
+
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --no-audit --fund=false
 
       - name: Install PDF verification tools
         run: sudo apt-get update && sudo apt-get install -y ghostscript poppler-utils qpdf
 
-      - name: Build and check 11ty site
+      - name: Build and check Build Awesome site
         run: npm test
 
       - name: Verify build output
@@ -44,7 +47,7 @@ jobs:
           echo "Built $(find _site -type f | wc -l) files"
 
       - name: Deploy to Cloudflare Workers
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

@@ -3,12 +3,7 @@ import path from "node:path";
 import { ROOT, SITE_URL } from "./site-data.mjs";
 
 const headersPath = path.join(ROOT, "_site", "_headers");
-const maxRules = 100;
-const requiredRules = [
-  ["/rss.xml", `Link: <${SITE_URL}/rss.xml>; rel="canonical"`],
-  ["/feed.xml", `Link: <${SITE_URL}/feed.xml>; rel="canonical"`],
-  ["/podcast.xml", `Link: <${SITE_URL}/podcast.xml>; rel="canonical"`],
-];
+const maxRules = 10;
 const failures = [];
 
 if (!fs.existsSync(headersPath)) {
@@ -19,19 +14,30 @@ if (!fs.existsSync(headersPath)) {
   const rules = lines.filter((line) => !line.startsWith(" ") && !line.startsWith("\t"));
 
   if (rules.length > maxRules) {
-    failures.push(`_site/_headers has ${rules.length} rules; Cloudflare Workers allows at most ${maxRules}`);
+    failures.push(`_site/_headers has ${rules.length} rules; expected ${maxRules} or fewer`);
   }
 
-  for (const [pathRule, header] of requiredRules) {
-    if (!text.includes(`${pathRule}\n  ${header}`)) {
-      failures.push(`_site/_headers missing canonical Link rule for ${pathRule}`);
-    }
+  if (!text.includes(`/*.xml\n  Link: <${SITE_URL}/:splat.xml>; rel="canonical"`)) {
+    failures.push("_site/_headers missing wildcard canonical Link rule for XML feeds");
   }
 
   for (const forbiddenPrefix of ["/assets/pdfs/", "/assets/citations/"]) {
     if (rules.some((rule) => rule.startsWith(forbiddenPrefix))) {
       failures.push(`_site/_headers contains per-file ${forbiddenPrefix} rules`);
     }
+  }
+
+  if (!text.includes("/*/metadata.json\n  Content-Type: application/ld+json")) {
+    failures.push("_site/_headers missing wildcard Content-Type rule for episode metadata JSON");
+  }
+
+  const episodeRules = rules.filter((rule) => /^\/[^/]+\/\*$/.test(rule));
+  if (episodeRules.length === 0) {
+    failures.push("_site/_headers missing episode wildcard rules");
+  }
+
+  if (rules.some((rule) => /\/metadata\.json$/.test(rule) && rule !== "/*/metadata.json")) {
+    failures.push("_site/_headers contains per-episode metadata rules");
   }
 }
 

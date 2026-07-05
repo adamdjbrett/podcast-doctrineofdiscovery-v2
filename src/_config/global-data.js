@@ -2,7 +2,7 @@ import { buildJsonLd } from "../../scripts/schema-data.mjs";
 
 export function registerGlobalData(eleventyConfig, { packageJson, siteData }) {
   eleventyConfig.addGlobalData("site", () => siteData);
-  eleventyConfig.addGlobalData("eleventyVersion", () => packageJson.devDependencies["@11ty/eleventy"].replace(/^[^\d]*/, ""));
+  eleventyConfig.addGlobalData("eleventyVersion", () => packageJson.dependencies["@awesome.me/buildawesome"].replace(/^[^\d]*/, ""));
   eleventyConfig.addGlobalData("eleventyComputed", {
     previous: (data) => {
       const postIndex = siteData.posts.findIndex((post) => post.url === data.page?.url);
