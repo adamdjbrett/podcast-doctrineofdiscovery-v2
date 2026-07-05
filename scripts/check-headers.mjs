@@ -3,7 +3,7 @@ import path from "node:path";
 import { ROOT, SITE_URL } from "./site-data.mjs";
 
 const headersPath = path.join(ROOT, "_site", "_headers");
-const maxRules = 10;
+const maxRules = 5;
 const failures = [];
 
 if (!fs.existsSync(headersPath)) {
@@ -34,6 +34,10 @@ if (!fs.existsSync(headersPath)) {
   const episodeRules = rules.filter((rule) => /^\/[^/]+\/\*$/.test(rule));
   if (episodeRules.length === 0) {
     failures.push("_site/_headers missing episode wildcard rules");
+  }
+
+  if (!rules.includes("/season:season/*")) {
+    failures.push("_site/_headers missing shared season wildcard rule");
   }
 
   if (rules.some((rule) => /\/metadata\.json$/.test(rule) && rule !== "/*/metadata.json")) {
