@@ -26,10 +26,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "npm@11.18.0",
+  "packageManager": "npm@11.9.0",
   "engines": {
     "node": ">=24.14.0",
-    "npm": ">=11.18.0"
+    "npm": ">=11.9.0"
   },
   "devDependencies": {
     "js-yaml": "5.2.1",

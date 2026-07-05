@@ -1,0 +1,46 @@
+name: Check PDF Metadata
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main", "master"]
+    paths:
+      - "public/assets/pdfs/**"
+      - "scripts/check-pdfs.mjs"
+      - "scripts/site-data.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/pdf-checks.yml"
+  pull_request:
+    paths:
+      - "public/assets/pdfs/**"
+      - "scripts/check-pdfs.mjs"
+      - "scripts/site-data.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/pdf-checks.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check-pdfs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.14.0"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --fund=false
+
+      - name: Install PDF metadata tools
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils qpdf
+
+      - name: Check PDF metadata
+        run: npm run check:pdfs
