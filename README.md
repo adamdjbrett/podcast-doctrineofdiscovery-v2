@@ -1,6 +1,8 @@
-[![Deploy 11ty to Cloudflare Workers](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/cloudflare-deploy.yml/badge.svg)](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/cloudflare-deploy.yml) [![Built with Cloudflare](https://workers.cloudflare.com/built-with-cloudflare.svg)](https://cloudflare.com)
+[![Deploy 11ty to Cloudflare Workers](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/cloudflare-deploy.yml/badge.svg)](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/cloudflare-deploy.yml)[![Check PDF Metadata](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/pdf-checks.yml/badge.svg)](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/pdf-checks.yml) 
+[![Built with Cloudflare](https://workers.cloudflare.com/built-with-cloudflare.svg)](https://cloudflare.com)
 
 [![hosted on xmit.co](xmit.gif)](https://xmit.co)
+***
 
 # Mapping the Doctrine of Discovery Podcast
 
