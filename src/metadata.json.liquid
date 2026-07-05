@@ -1,0 +1,23 @@
+---
+permalink: /metadata.json
+layout: null
+eleventyExcludeFromCollections: true
+---
+{
+  "@context": "https://schema.org",
+  "@type": "PodcastSeries",
+  "@id": "{{ site.url }}/#podcast",
+  "name": {{ site.title | jsonify }},
+  "description": {{ site.description | jsonify }},
+  "url": {{ site.url | jsonify }},
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Indigenous Values Initiative",
+    "url": "https://indigenousvalues.org/"
+  },
+  "sameAs": [
+    "https://doctrineofdiscovery.org/",
+    "https://aila.ngo/"
+  ]
+}

@@ -12,6 +12,14 @@
     <!-- Preload LCP hero background image -->
     <link rel="preload" as="image" href="/assets/images/hero-background.webp" fetchpriority="high">
     <link rel="me" href="https://proven.lol/0c8828">
+    {% if layout == 'post' %}
+    <link rel="cite-as" href="{{ page.url | absolute_url }}">
+    <link rel="type" href="https://schema.org/PodcastEpisode">
+    <link rel="license" href="{{ site.rights.url }}">
+    <link rel="describedby" type="application/ld+json" profile="https://schema.org/" href="{{ page.url }}metadata.json">
+    {% else %}
+    <link rel="describedby" type="application/ld+json" profile="https://schema.org/" href="/metadata.json">
+    {% endif %}
     {%- include "feed-meta.html" -%}
     {%- include "seo.html" -%}
     {%- include "dublin-core.html" -%}

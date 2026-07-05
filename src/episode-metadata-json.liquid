@@ -1,0 +1,19 @@
+---
+pagination:
+  data: site.posts
+  size: 1
+  alias: episode
+permalink: "{{ episode.url }}metadata.json"
+layout: null
+eleventyExcludeFromCollections: true
+---
+{% assign episode_jsonld_url = episode.url | absolute_url %}
+{% assign episode_jsonld_title = episode.title | default: site.title %}
+{% assign episode_jsonld_description = episode.description | default: episode.excerpt | default: site.description %}
+{% assign episode_jsonld_language = episode.language | default: "en" %}
+{% assign episode_jsonld_date = episode.date %}
+{% assign episode_jsonld_image = episode.image | default: site.cover | absolute_url %}
+{% assign episode_jsonld_hosts = episode.hosts | default: site.people.hosts %}
+{% assign episode_jsonld_transcript = episode.transcript_pdf %}
+{% assign episode_jsonld_citations = episode.citations %}
+{% include "episode-jsonld.html" %}

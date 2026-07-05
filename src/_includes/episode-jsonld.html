@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "PodcastEpisode",
+  "@id": {{ episode_jsonld_url | jsonify }},
+  "name": {{ episode_jsonld_title | jsonify }},
+  "headline": {{ episode_jsonld_title | jsonify }},
+  "description": {{ episode_jsonld_description | jsonify }},
+  "url": {{ episode_jsonld_url | jsonify }},
+  "inLanguage": {{ episode_jsonld_language | jsonify }},
+  "datePublished": {{ episode_jsonld_date | date: "%Y-%m-%d" | jsonify }},
+  "image": {{ episode_jsonld_image | jsonify }},
+  "author": {{ episode_jsonld_hosts | jsonify }},
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.people.publisher.name | jsonify }},
+    "url": {{ site.people.publisher.url | jsonify }}
+  },
+  "partOfSeries": {
+    "@type": "PodcastSeries",
+    "@id": {{ site.url | append: "/#podcast" | jsonify }},
+    "name": {{ site.title | jsonify }},
+    "url": {{ site.url | jsonify }}
+  },
+  "license": {{ site.rights.url | jsonify }}{% if episode_jsonld_transcript %},
+  "transcript": {{ episode_jsonld_transcript | absolute_url | jsonify }}{% endif %}{% if episode_jsonld_citations and episode_jsonld_citations.size > 0 %},
+  "citation": {{ episode_jsonld_citations | jsonify }}{% endif %}
+}
