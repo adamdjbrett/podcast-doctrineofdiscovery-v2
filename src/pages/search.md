@@ -9,4 +9,4 @@ redirect_from: /Search/
 ---
 Below you can search the Mapping the Doctrine of Discovery Podcast Site.
 
-{% include "search-lunr.html" %}
+{% include "search-pagefind.html" %}

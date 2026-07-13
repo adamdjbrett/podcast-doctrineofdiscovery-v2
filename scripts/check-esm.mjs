@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { ROOT } from "./site-data.mjs";
 
-const allowed = new Set(["public/assets/js/lunr.js", "package-lock.json"]);
+const allowed = new Set(["package-lock.json"]);
 const patterns = [/require\s*\(/, /module\.exports/, /createRequire/, /\.cjs\b/];
 const failures = [];
 
