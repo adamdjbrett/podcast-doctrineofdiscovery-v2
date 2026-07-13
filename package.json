@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf _site",
+    "dev": "eleventy --serve",
     "build": "npm run clean && buildawesome && npm run generate:postbuild && pagefind --site _site",
     "generate:postbuild": "node scripts/postbuild-citations.mjs && node scripts/postbuild-podcast-feed.mjs && node scripts/postbuild-headers.mjs",
     "check:assets": "node scripts/check-assets.mjs",
@@ -32,6 +33,7 @@
     "npm": ">=11.9.0"
   },
   "devDependencies": {
+    "@11ty/eleventy": "4.0.0-alpha.10",
     "js-yaml": "5.2.1",
     "liquidjs": "10.27.1",
     "markdown-it": "14.3.0",
