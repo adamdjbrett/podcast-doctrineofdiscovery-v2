@@ -8,7 +8,7 @@ layout: null
 # TEAM
 
     Adam DJ Brett -- Web Developer -- @__adjb
-    Indigenous Values Initiative -- Fiscal Sponsor -- @indigenousVI
+    Indigenous Values Initiative --@indigenousVI
     Philip P. Arnold -- Indigenous Values Initiative -- @indigenousVI
     Sandy Bigtree -- Indigenous Values Initiative -- @indigenousVI
 

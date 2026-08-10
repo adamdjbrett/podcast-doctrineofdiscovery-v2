@@ -1,3 +1,5 @@
 _site/
+.cache/
+.wrangler/
 .DS_Store
 /node_modules

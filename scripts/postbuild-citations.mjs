@@ -1,11 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
-import { ROOT, readPosts } from "./site-data.mjs";
+import { ROOT } from "./site-data.mjs";
+import { loadPosts } from "./site-data-cache.mjs";
 
 const outputDir = path.join(ROOT, "_site", "assets", "citations");
 fs.mkdirSync(outputDir, { recursive: true });
 
-const posts = readPosts();
+const posts = loadPosts();
 
 function formatDate(date) {
   const d = new Date(date);

@@ -2,10 +2,11 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
-import { ROOT, PODCAST_PEOPLE, RIGHTS, readPosts } from "./site-data.mjs";
+import { ROOT, PODCAST_PEOPLE, RIGHTS } from "./site-data.mjs";
+import { loadPosts } from "./site-data-cache.mjs";
 
 const pdfDir = path.join(ROOT, "public", "assets", "pdfs");
-const postsByPdf = new Map(readPosts().filter((post) => post.transcript_pdf).map((post) => [decodeURI(post.transcript_pdf.replace(/^\/assets\/pdfs\//, "")), post]));
+const postsByPdf = new Map(loadPosts().filter((post) => post.transcript_pdf).map((post) => [decodeURI(post.transcript_pdf.replace(/^\/assets\/pdfs\//, "")), post]));
 
 for (const file of walk(pdfDir).filter((entry) => /\.pdf$/i.test(entry))) {
   const rel = path.relative(pdfDir, file).split(path.sep).join("/");

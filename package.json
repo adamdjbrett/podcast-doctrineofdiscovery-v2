@@ -1,12 +1,12 @@
 {
   "name": "podcast-doctrineofdiscovery-v2",
   "version": "1.0.0",
+  "private": true,
   "description": "Build Awesome site for the Mapping the Doctrine of Discovery Podcast.",
   "type": "module",
-  "main": "index.js",
   "scripts": {
     "clean": "rm -rf _site",
-    "dev": "eleventy --serve",
+    "dev": "buildawesome --serve",
     "build": "npm run clean && buildawesome && npm run generate:postbuild && pagefind --site _site",
     "generate:postbuild": "node scripts/postbuild-citations.mjs && node scripts/postbuild-podcast-feed.mjs && node scripts/postbuild-headers.mjs",
     "check:assets": "node scripts/check-assets.mjs",
@@ -24,27 +24,27 @@
     "test:deploy": "npm run build && npm run check:esm && npm run check:build && npm run check:headers && npm run check:feeds && npm run check:assets && npm run check:links && npm run check:redirects && npm run check:metadata && npm run check:citations",
     "test": "npm run build && npm run check:esm && npm run check:build && npm run check:headers && npm run check:feeds && npm run check:assets && npm run check:links && npm run check:redirects && npm run check:metadata && npm run check:citations && npm run check:pdfs"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "packageManager": "npm@11.9.0",
   "engines": {
     "node": ">=24.14.0",
     "npm": ">=11.9.0"
   },
+  "dependencies": {
+    "@awesome.me/buildawesome": "4.0.0-alpha.10"
+  },
   "devDependencies": {
-    "@11ty/eleventy": "4.0.0-alpha.10",
-    "js-yaml": "5.2.1",
-    "liquidjs": "10.27.1",
-    "markdown-it": "14.3.0",
+    "js-yaml": "5.2.3",
+    "markdown-it": "15.0.0",
     "pagefind": "1.5.2",
-    "wrangler": "4.107.0"
+    "wrangler": "4.120.0"
   },
   "overrides": {
-    "undici": "~7.28.0"
+    "undici": "^7.29.0"
   },
-  "dependencies": {
-    "@11ty/nunjucks": "4.0.0-alpha.3",
-    "@awesome.me/buildawesome": "4.0.0-alpha.10"
+  "allowScripts": {
+    "esbuild": true,
+    "fsevents": true,
+    "sharp": false,
+    "workerd": true
   }
 }

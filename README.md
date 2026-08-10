@@ -12,7 +12,7 @@ The official website repository for the Mapping the Doctrine of Discovery Podcas
 
 ## Build
 
-This site is built with Eleventy and Liquid templates.
+This site is built with [Build Awesome](https://build.awesome.me/) (Eleventy) and Liquid templates. Config lives in `buildawesome.config.js`.
 
 ```sh
 npm install
@@ -20,7 +20,18 @@ npm run build
 npm test
 ```
 
+Local preview runs on <http://localhost:8080/> either way:
+
+```sh
+npm run dev
+npx @awesome.me/buildawesome --serve
+```
+
 The build writes to `_site/`. The build also generates citation downloads and `podcast.xml` after Eleventy finishes. `podcast.xml` is built from Buzzsprout when the network is available and falls back to `scripts/cache/buzzsprout-feed.xml` for offline or restricted builds.
+
+Site data (episodes, authors, pages, categories, tags) is assembled once by `scripts/site-data.mjs` and cached as JSON in `.cache/site-data.json` by `scripts/site-data-cache.mjs`. The cache is keyed on a fingerprint of every source file the builder reads, so edits invalidate it automatically and the config plus each postbuild/check script reuses the parse instead of re-walking `src/`. `npm run clean` removes `_site/` only; delete `.cache/` by hand if you ever need a forced rebuild.
+
+Dependency install scripts are gated by the `allowScripts` field in `package.json` (npm 11.9+). `esbuild`, `fsevents`, and `workerd` are approved because they unpack platform binaries. `sharp` is denied: it arrives only through `miniflare` (a `wrangler` dependency this project does not run), its prebuilt `@img/sharp-*` binary installs regardless, and its install script tries a from-source libvips build on machines that have Homebrew libvips.
 
 `npm test` runs the production build plus checks for required pages, ESM-only project code, feeds, referenced assets, internal links, redirects, tag pages, episode metadata, citations, and PDF metadata.
 
@@ -72,7 +83,14 @@ Citation downloads are generated for every episode as RIS and CSL JSON under `/a
 
 GitHub Actions install Node 22 plus Ghostscript, Poppler, and qpdf, then build and verify the site with `npm test`. Successful runs deploy the generated `_site/` directory to Cloudflare Workers and XMIT.
 
-Cloudflare Workers static assets allow at most 100 `_headers` rules, so `_site/_headers` intentionally contains only feed canonical `Link` headers for `/rss.xml`, `/feed.xml`, and `/podcast.xml`. PDF and citation metadata lives in the generated PDF/RIS/CSL JSON files rather than per-file HTTP headers. `wrangler.toml` does not define a build command; CI deploys the already-built and verified `_site` directory.
+Cloudflare Workers static assets allow at most 100 `_headers` rules. `scripts/postbuild-headers.mjs` generates four wildcard rules, and `npm run check:headers` enforces that ceiling:
+
+1. `/*.xml` — canonical `Link` for the feeds.
+2. `/season:season/*` — one rule covering every season via the `:season` placeholder.
+3. `/special/*` — the one non-season episode category.
+4. `/*metadata.json` — `application/ld+json`, plus `! Link` to strip the episode Signposting links from the JSON-LD documents themselves.
+
+Each episode rule emits its three Signposting link-values as a single comma-separated `Link` field (RFC 8288), which is how Cloudflare serves them anyway, so a rule costs one header entry rather than three. Rule order matters: `/*metadata.json` must stay last for its `! Link` to unset what the episode rules added. PDF and citation metadata lives in the generated PDF/RIS/CSL JSON files rather than per-file HTTP headers. `wrangler.toml` does not define a build command; CI deploys the already-built and verified `_site` directory.
 
 ## Notes
 

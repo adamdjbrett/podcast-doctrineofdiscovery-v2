@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import { ROOT, readPosts, slugify } from "./site-data.mjs";
+import { ROOT, slugify } from "./site-data.mjs";
+import { loadPosts } from "./site-data-cache.mjs";
 
 const siteDir = path.join(ROOT, "_site");
 const dcNames = ["title", "creator", "subject", "description", "publisher", "contributor", "date", "type", "format", "identifier", "source", "language", "relation", "coverage", "rights"];
@@ -40,7 +41,7 @@ function isRedirectPage(html) {
   return html.includes("<title>Redirecting...</title>") && html.includes("http-equiv=\"refresh\"");
 }
 
-for (const post of readPosts()) {
+for (const post of loadPosts()) {
   const htmlPath = path.join(siteDir, post.url.replace(/^\//, ""), "index.html");
   const html = fs.existsSync(htmlPath) ? fs.readFileSync(htmlPath, "utf8") : "";
   if (!html) {

@@ -329,6 +329,20 @@ function tagListFromGroups(tags) {
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 
+// Pre-sorted (count descending, then name) so templates iterate once instead of
+// rebuilding the ordering with nested Liquid loops on every build.
+function categoryListFromGroups(categories) {
+  return Object.entries(categories)
+    .map(([name, posts]) => ({
+      name,
+      slug: slugify(name),
+      url: `/${name}/`,
+      count: posts.length,
+      posts,
+    }))
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+}
+
 function readDataDir() {
   const dataDir = path.join(ROOT, "src", "_data");
   const data = {};
@@ -396,6 +410,7 @@ export function buildSiteData() {
   const authors = readAuthors();
   const pages = readPages();
   const tags = groupByList(posts, "tags");
+  const categories = groupByList(posts, "categories");
 
   const redirects = redirectsFor([...posts, ...authors, ...pages]);
 
@@ -410,7 +425,8 @@ export function buildSiteData() {
     posts,
     authors,
     pages,
-    categories: groupByList(posts, "categories"),
+    categories,
+    categoryList: categoryListFromGroups(categories),
     tags,
     tagList: tagListFromGroups(tags),
     data: readDataDir(),

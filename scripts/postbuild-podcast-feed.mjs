@@ -1,7 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { PODCASTING_2_0 } from "./podcasting-data.mjs";
-import { ROOT, SITE_URL, readPosts } from "./site-data.mjs";
+import { ROOT, SITE_URL } from "./site-data.mjs";
+import { loadPosts } from "./site-data-cache.mjs";
 
 const SOURCE_FEED_URL = "https://feeds.buzzsprout.com/1926214.rss";
 const OUTPUT_FILENAME = "podcast.xml";
@@ -152,7 +153,7 @@ async function fetchFeed(url, redirects = 5) {
   return response.text();
 }
 
-function transformFeed(xml, posts = readPosts()) {
+function transformFeed(xml, posts = loadPosts()) {
   let output = xml.replace(/^\s*<\?xml-stylesheet .*?\?>\s*/m, "");
   let trailer = "";
   const transcriptByBuzzsproutId = transcriptMapFromPosts(posts);

@@ -1,8 +1,11 @@
 import { buildJsonLd } from "../../scripts/schema-data.mjs";
+import { resolveGenerator } from "./generator.js";
 
-export function registerGlobalData(eleventyConfig, { packageJson, siteData }) {
+export function registerGlobalData(eleventyConfig, { packageJson, rootUrl, siteData }) {
+  const generator = resolveGenerator(rootUrl, packageJson);
+
   eleventyConfig.addGlobalData("site", () => siteData);
-  eleventyConfig.addGlobalData("eleventyVersion", () => packageJson.dependencies["@awesome.me/buildawesome"].replace(/^[^\d]*/, ""));
+  eleventyConfig.addGlobalData("generator", () => generator);
   eleventyConfig.addGlobalData("eleventyComputed", {
     previous: (data) => {
       const postIndex = siteData.posts.findIndex((post) => post.url === data.page?.url);

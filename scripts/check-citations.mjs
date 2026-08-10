@@ -1,12 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
-import { ROOT, readPosts } from "./site-data.mjs";
+import { ROOT } from "./site-data.mjs";
+import { loadPosts } from "./site-data-cache.mjs";
 
 const outputDir = path.join(ROOT, "_site", "assets", "citations");
 const requiredCsl = ["type", "genre", "title", "container-title", "author", "contributor", "publisher", "issued", "URL", "abstract", "language", "keyword", "license"];
 const failures = [];
 
-for (const post of readPosts()) {
+for (const post of loadPosts()) {
   for (const slug of citationSlugs(post)) {
     const risPath = path.join(outputDir, `${slug}.ris`);
     const cslPath = path.join(outputDir, `${slug}.csl.json`);

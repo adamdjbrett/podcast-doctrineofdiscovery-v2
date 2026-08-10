@@ -1,13 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildSiteData } from "./site-data.mjs";
+import { loadSiteData } from "./site-data-cache.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PUBLIC_DIR = path.join(ROOT, "public");
 const SCAN_DIRS = ["src", "scripts"].map((dir) => path.join(ROOT, dir));
 const SOURCE_ONLY_EXTENSIONS = new Set([".ai", ".psd", ".sketch", ".fig"]);
-const LEGACY_REDIRECT_SOURCES = new Set(Object.keys(buildSiteData().redirects));
+const LEGACY_REDIRECT_SOURCES = new Set(Object.keys(loadSiteData().redirects));
 const REFERENCE_RE = /["'(`](\/(?:assets|site\.webmanifest|favicon\.ico|browserconfig\.xml)[^"'`) <>\n]*)/g;
 
 const publicFiles = walk(PUBLIC_DIR);

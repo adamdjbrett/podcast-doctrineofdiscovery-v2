@@ -8,7 +8,7 @@ const failures = [];
 
 for (const file of walk(ROOT)) {
   const rel = path.relative(ROOT, file);
-  if (rel === "scripts/check-esm.mjs" || rel.startsWith("node_modules/") || rel.startsWith("_site/") || rel.startsWith(".git/") || allowed.has(rel)) {
+  if (rel === "scripts/check-esm.mjs" || rel.startsWith("node_modules/") || rel.startsWith("_site/") || rel.startsWith(".git/") || rel.startsWith(".cache/") || allowed.has(rel)) {
     continue;
   }
   if (!/\.(js|mjs|json)$/.test(file)) {

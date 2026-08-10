@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { PODCASTING_2_0 } from "./podcasting-data.mjs";
-import { readPosts } from "./site-data.mjs";
+import { loadPosts } from "./site-data-cache.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE_DIR = path.join(ROOT, "_site");
@@ -67,7 +67,7 @@ const checks = [
         failures.push("_site/podcast.xml episode 0 item is missing <itunes:episodeType>trailer</itunes:episodeType>");
       }
 
-      for (const post of readPosts()) {
+      for (const post of loadPosts()) {
         const id = buzzsproutIdFromPost(post);
         if (!id || !post.transcript_pdf) {
           continue;
