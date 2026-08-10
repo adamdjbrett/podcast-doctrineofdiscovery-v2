@@ -1,7 +1,5 @@
 [![Deploy 11ty to Cloudflare Workers](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/cloudflare-deploy.yml/badge.svg)](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/cloudflare-deploy.yml)[![Check PDF Metadata](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/pdf-checks.yml/badge.svg)](https://github.com/adamdjbrett/podcast-doctrineofdiscovery-v2/actions/workflows/pdf-checks.yml) 
 [![Built with Cloudflare](https://workers.cloudflare.com/built-with-cloudflare.svg)](https://cloudflare.com)
-
-[![hosted on xmit.co](xmit.gif)](https://xmit.co)
 ***
 
 # Mapping the Doctrine of Discovery Podcast
@@ -81,7 +79,10 @@ Citation downloads are generated for every episode as RIS and CSL JSON under `/a
 
 ## Deployment
 
-GitHub Actions install Node 22 plus Ghostscript, Poppler, and qpdf, then build and verify the site with `npm test`. Successful runs deploy the generated `_site/` directory to Cloudflare Workers and XMIT.
+GitHub Actions run on Node 24.14.0, matching `.node-version` and the `engines.node` floor in `package.json`.
+
+- `cloudflare-deploy.yml` runs `npm ci` and `npm run test:deploy`, then deploys the generated `_site/` directory to Cloudflare Workers.
+- `pdf-checks.yml` installs Poppler and qpdf and runs `npm run check:pdfs` when PDFs or the scripts that verify them change.
 
 Cloudflare Workers static assets allow at most 100 `_headers` rules. `scripts/postbuild-headers.mjs` generates four wildcard rules, and `npm run check:headers` enforces that ceiling:
 
