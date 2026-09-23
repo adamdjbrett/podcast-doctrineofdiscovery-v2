@@ -45,6 +45,9 @@ export function registerFilters(eleventyConfig, { md, siteData }) {
     if (format === "%Y/%m/%d") {
       return `${date.getUTCFullYear()}/${pad(date.getUTCMonth() + 1)}/${pad(date.getUTCDate())}`;
     }
+    if (format === "%Y-%m-%d") {
+      return date.toISOString().slice(0, 10);
+    }
     return date.toISOString();
   });
   eleventyConfig.addFilter("relative_url", (value) => relativeUrl(siteData, value));

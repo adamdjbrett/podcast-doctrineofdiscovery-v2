@@ -1,13 +1,12 @@
 {%- if layout == 'post' -%}
-{%- assign episodeAuthor = author | default: "Indigenous Values Initiative" -%}
 <!-- Zotero / Highwire / PRISM — podcast episode -->
 <meta property="zotero:itemType" content="podcast" />
 <meta property="dc:title" content="{% if title %}{{ title | escape }}{% else %}{{ site.title | escape }}{% endif %}" />
-<meta property="dc:creator" content="{{ episodeAuthor | escape }}" />
+{% for person in creators %}<meta property="dc:creator" content="{{ person.name | escape }}" />{% endfor %}
 {% if date %}<meta property="dc:date" content="{{ date | date: '%Y-%m-%d' }}" />{% endif %}
 <meta property="dc:language" content="en" />
 <meta property="dc:identifier" content="{{ page.url | absolute_url }}" />
-<meta name="citation_author" content="{{ episodeAuthor | escape }}" />
+{% for person in creators %}<meta name="citation_author" content="{{ person.name | escape }}" />{% endfor %}
 {% if date %}<meta name="citation_publication_date" content="{{ date | date: '%Y-%m-%d' }}" />{% endif %}
 <meta name="citation_public_url" content="{{ page.url | absolute_url }}" />
 <meta name="citation_language" content="en" />
